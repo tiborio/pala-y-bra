@@ -22,7 +22,8 @@ box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:en
 html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 "Avenir Next","Segoe UI",system-ui,sans-serif;display:flex;justify-content:center}
-#app{width:100%;max-width:520px;padding:12px 14px 24px;text-align:center}
+#app{position:relative;width:100%;max-width:520px;padding:12px 14px 24px;text-align:center}
+.hrules{position:absolute;top:12px;right:14px;width:46px;height:46px;border-radius:12px;border:2px solid var(--ln);background:var(--sf);font-weight:800;font-size:20px;color:var(--br)}
 button{font:inherit;color:inherit;cursor:pointer}
 button:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
 #nav{display:flex;gap:6px;justify-content:center}
@@ -31,6 +32,7 @@ button:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-o
 .tab.done{background:var(--ac);color:#16213e;border-color:var(--ac)}
 .tab small{display:block;font-size:11px;font-weight:600;color:var(--mu)}
 .tab.done small{color:#16213e}
+.tab small.ck{font-size:17px;line-height:1;font-weight:900;margin-top:1px}
 .pair{display:flex;align-items:flex-end;justify-content:center;gap:14px;margin:22px 0 6px;font-size:64px;font-weight:900;letter-spacing:.02em;color:var(--br);line-height:1}
 .arch{width:84px;height:34px;border:5px dotted var(--ac);border-bottom:0;border-radius:90px 90px 0 0;margin-bottom:14px}
 .pill{display:inline-block;padding:3px 14px;border-radius:99px;background:var(--sf);font-weight:700;color:var(--br)}
@@ -103,7 +105,7 @@ h2{margin:6px 0;font-size:34px;color:var(--br)}
 <div id="t" role="status"></div>
 <div id="m" role="dialog" aria-modal="true"><div id="mc"></div></div>
 <script>
-let GOALS={},picks=[],S,v=0,cur='',home=true;
+let GOALS={},picks=[],S,v=0,cur='',home=true,wordsOpen=true;
 const $=s=>document.querySelector(s);
 const N=s=>s.toUpperCase().replace(/Ñ/g,'#').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/#/g,'Ñ');
 const D=new Map(),P={},fn=k=>k.toLowerCase().replace(/ñ/g,'0');
@@ -131,7 +133,7 @@ function go(i){home=false;v=i;cur='';render()}
 function goHome(){home=true;cur='';render();scrollTo(0,0)}
 function soon(){toast('Próximamente')}
 function next(){const i=S.r.findIndex(r=>!r.x);go(i<0?3:i)}
-function nav(){$('#nav').innerHTML=`<button class="tab ho" onclick="goHome()" aria-label="Inicio"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg></button>`+picks.map((k,i)=>`<button class="tab ${v==i?'on':''} ${S.r[i].x?'done':''}" onclick="go(${i})">${k}<small>${S.r[i].x?'listo':'Ronda '+(i+1)}</small></button>`).join('')+
+function nav(){$('#nav').innerHTML=`<button class="tab ho" onclick="goHome()" aria-label="Inicio"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg></button>`+picks.map((k,i)=>`<button class="tab ${v==i?'on':''} ${S.r[i].x?'done':''}" onclick="go(${i})">${k}<small class="${S.r[i].x==1?'ck':''}">${S.r[i].x==1?'✓':S.r[i].x?'cerrada':'Ronda '+(i+1)}</small></button>`).join('')+
  `<button class="tab ${v==3?'on':''}" onclick="go(3)">Stats<small>Hoy</small></button><button class="tab" onclick="rules(0)">?<small>Reglas</small></button>`}
 function chips(f){return f.map(n=>{const o=D.get(n);return `<span class="chip ${o.r?'r':''}">${o.w}${o.r?' ✦':''}</span>`}).join('')}
 function inp(){const e=$('#inp');if(!e)return;if(!cur){e.className='ph';e.textContent='ESCRIBE UNA PALABRA…'}else{e.className='';e.innerHTML='<b>'+cur[0]+'</b>'+cur.slice(1)}}
@@ -141,11 +143,13 @@ function game(){const i=v,k=picks[i],r=S.r[i],g=GO(i),t=Math.min(tot(i),g);
  else{o+=`<p class="msg">${r.x==1?'¡Ronda completada!':'Ronda cerrada. Palabras que pudiste jugar:'}</p>`;
   if(r.x==2){const m=P[k].filter(x=>!r.f.includes(x.n)&&x.b!='r').sort((a,b)=>b.p-a.p).slice(0,3);o+=`<div class="chips">${m.map(x=>`<span class="chip ${x.r?'r':''}">${x.w} · ${x.p}</span>`).join('')}</div>`}
   o+=`<button class="btn" onclick="next()">${S.r.every(r=>r.x)?'Ver resumen':'Siguiente ronda'}</button>`}
- o+=`<details ${r.x?'':'open'}><summary>Mis palabras (${r.f.length})</summary><div class="chips">${chips(r.f)}</div></details>`;
+ o+=`<details ${wordsOpen?'open':''} ontoggle="wordsOpen=this.open"><summary>Mis palabras (${r.f.length})</summary><div class="chips">${chips(r.f)}</div></details>`;
  if(!r.x){o+=`<div id="kb">${['QWERTYUIOP','ASDFGHJKLÑ','!ZXCVBNM?'].map(row=>`<div class="row">${[...row].map(c=>c=='!'?'<button class="k w" data-k="ENTER">ENTRAR</button>':c=='?'?'<button class="k w" data-k="BACK" aria-label="Borrar">⌫</button>':`<button class="k" data-k="${c}">${c}</button>`).join('')}</div>`).join('')}</div><button class="link" onclick="giveUp()">Rendirme en esta ronda</button>`}
  $('#v').innerHTML=o;inp()}
 function stats(){const rs=S.r,all=rs.flatMap(r=>r.f).map(n=>D.get(n)),n=tier(),W=all.length,fmt=x=>x.toFixed(1).replace('.',',');
- const by=(f)=>[...all].sort(f)[0],lg=by((a,b)=>b.n.length-a.n.length),bs=by((a,b)=>b.p-a.p),ra=all.filter(x=>x.r).sort((a,b)=>b.p-a.p)[0];
+ const by=(f)=>[...all].sort(f)[0],lg=by((a,b)=>b.n.length-a.n.length||b.p-a.p),bs=by((a,b)=>b.p-a.p),ra=all.filter(x=>x.r).sort((a,b)=>b.p-a.p)[0],
+  rr=all.filter(x=>x.r&&x!==lg).sort((a,b)=>b.p-a.p)[0]||ra,
+  br=picks.map((k,i)=>({k,t:tot(i),n:rs[i].f.length})).filter(x=>x.n).sort((a,b)=>b.t-a.t)[0];
  const usual=picks.reduce((a,k)=>a+P[k].filter(x=>x.b!='r').length,0),found=all.filter(x=>x.b!='r').length,open=rs.findIndex(r=>!r.x),fin=open<0;
  const L=[];
  if(!W)L.push('Todavía no has cavado nada hoy. Elige una ronda y encuentra tu primera palabra.');
@@ -156,7 +160,7 @@ function stats(){const rs=S.r,all=rs.flatMap(r=>r.f).map(n=>D.get(n)),n=tier(),W
   else L.push(n==3?'Tres rondas completas: has cavado el día entero.':n==0?'Hoy has cerrado las tres rondas sin completarlas. Mañana, nuevos pares.':`Completaste ${n} de 3 rondas y cerraste el resto. Mañana, nuevos pares.`)}
  let o=`<h2>${TIERS[n]}</h2><p class="sub">${n} de 3 rondas completadas</p><div class="seg">${rs.map(r=>`<i class="${r.x==1?'on':''}"></i>`).join('')}</div>
  <div class="insight">${L.map(l=>`<p>${l}</p>`).join('')}</div>
- <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small>${lg?lg.w:'—'}</div><div><small>Más valiosa</small>${bs?bs.w:'—'}</div><div><small>Más rara ✦</small>${ra?ra.w:'—'}</div></div>
+ <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small>${lg?lg.w:'—'}</div><div><small>Más rara ✦</small>${rr?rr.w:'—'}</div><div><small>Mejor ronda</small>${br?br.k+' · '+br.t+' pts':'—'}</div></div>
  <h3>Progreso por ronda</h3>${picks.map((k,i)=>{const t=Math.min(tot(i),GO(i));return `<div class="rr"><span>${k}</span><div class="bar"><i style="width:${t/GO(i)*100}%"></i></div><span>${t} / ${GO(i)}</span></div>`}).join('')}
  <button class="btn" onclick="share()">Compartir resultados</button>`;
  if(fin){const got=new Set(rs.flatMap(r=>r.f)),miss=picks.flatMap(k=>P[k].filter(x=>x.b!='r'&&!got.has(x.n))).sort((a,b)=>b.p-a.p).slice(0,6);
@@ -173,7 +177,7 @@ function homeView(){$('#nav').innerHTML='';
  const done=S.r.every(r=>r.x),started=S.r.some(r=>r.f.length||r.x),c=S.r.filter(r=>r.x==1).length,
  dt=new Date().toLocaleDateString('es',{weekday:'long',day:'numeric',month:'long'}),
  ic=d=>`<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
- $('#v').innerHTML=`<div class="home">${LOGO}<h1>Pala <i>y</i> Bra</h1><p class="tag">Cava la palabra que une las dos letras</p>
+ $('#v').innerHTML=`<button class="hrules" onclick="rules(0)" aria-label="Reglas">?</button><div class="home">${LOGO}<h1>Pala <i>y</i> Bra</h1><p class="tag">Cava la palabra que une las dos letras</p>
  <div class="daily"><div class="today" aria-label="Pares de hoy">${picks.map(k=>`<span>${k[0]} · ${k[2]}</span>`).join('')}</div>
  <button class="btn" onclick="play()">${done?'Ver resultados de hoy':started?'Seguir el diario':'Jugar el diario'}</button>
  <p class="st">${c} de 3 rondas completadas</p></div>
@@ -181,7 +185,7 @@ function homeView(){$('#nav').innerHTML='';
  <button class="tile" onclick="soon()">${ic('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/>')}Archivo<small>Días pasados</small><em>Pronto</em></button>
  <button class="tile" onclick="soon()">${ic('<path d="M5 20V10M12 20V4M19 20v-7"/>')}Estadísticas<small>Tu historial</small><em>Pronto</em></button>
  <button class="tile" onclick="soon()">${ic('<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>')}Cuenta<small>Tu perfil</small><em>Pronto</em></button></div>
- <button class="link" onclick="rules(0)">Cómo jugar</button><div class="date">${dt}</div></div>`}
+ <div class="date">${dt}</div></div>`}
 function play(){home=false;if(S.r.every(r=>r.x))v=3;render()}
 function render(){if(home){homeView();return}nav();v==3?stats():game()}
 function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
@@ -191,18 +195,19 @@ function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
  else if(!D.has(w))m='No está en el diccionario';
  if(m)return toast(m);
  r.f.push(w);cur='';toast('+'+D.get(w).p+' pts'+(D.get(w).r?' ✦':''));
- if(tot(v)>=GO(v)){r.x=1;save();render();setTimeout(()=>{if(S.r[v]===r&&v<3)next()},1600)}else{save();render()}}
+ if(tot(v)>=GO(v)){r.x=1;save();render();setTimeout(()=>{if(!home&&S.r[v]===r&&v<3&&S.r.some(q=>!q.x))next()},1600)}else{save();render()}}
 function key(c){if(home){if(c=='ENTER')play();return}if(v>2||S.r[v].x)return;if(c=='ENTER')sub();else if(c=='BACK'){cur=cur.slice(0,-1);inp()}else if(cur.length<20){cur+=c;inp()}}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)key(b.dataset.k)});
 addEventListener('keydown',e=>{if($('#m').classList.contains('open')||e.ctrlKey||e.metaKey||e.altKey)return;
  if(e.key=='Enter'){if(document.activeElement.tagName=='BUTTON')return;key('ENTER')}else if(e.key=='Backspace')key('BACK');else if(/^[a-zñáéíóúü]$/i.test(e.key))key(N(e.key))});
-const RL=[['Une las letras','Cada palabra debe empezar y terminar con las letras de hoy.'],
+const RL=[['Une las letras','Cada palabra debe empezar y terminar con las letras de hoy. Las tildes no importan, y valen plurales, femeninos y verbos conjugados.'],
 ['Más larga, más puntos','Mínimo 4 letras. Cuanto más larga la palabra, más puntos. Las palabras raras ✦ valen el doble.'],
+['Sin nombres propios','No valen nombres propios ni gentilicios de países, ciudades o regiones, como «danés» o «parisino». Sí valen las palabras con otro significado, como «gato» o «canario».'],
 ['Sube a Perfeccionista','Alcanza la meta en las 3 rondas para llegar al nivel más alto.'],
 ['¿Atascado? Ríndete','Cierra la ronda para asegurar tus puntos y ver palabras que podías jugar.']];
 function rules(i){const m=$('#m');m.classList.add('open');
  $('#mc').innerHTML=`<button class="x" aria-label="Cerrar" onclick="$('#m').classList.remove('open')">✕</button><h3>${RL[i][0]}</h3><p>${RL[i][1]}</p>
- <div class="nv">${i?`<button aria-label="Anterior" onclick="rules(${i-1})">←</button>`:'<span></span>'}<span class="dots">${RL.map((_,j)=>`<i class="${j==i?'on':''}"></i>`).join('')}</span>${i<3?`<button aria-label="Siguiente" onclick="rules(${i+1})">→</button>`:`<button onclick="$('#m').classList.remove('open')">Jugar</button>`}</div>`}
+ <div class="nv">${i?`<button aria-label="Anterior" onclick="rules(${i-1})">←</button>`:'<span></span>'}<span class="dots">${RL.map((_,j)=>`<i class="${j==i?'on':''}"></i>`).join('')}</span>${i<RL.length-1?`<button aria-label="Siguiente" onclick="rules(${i+1})">→</button>`:`<button onclick="$('#m').classList.remove('open')">${home?'Entendido':'Jugar'}</button>`}</div>`}
 load().then(boot).catch(()=>{$('#v').innerHTML='<p class="msg">No se pudieron cargar los datos. Abre el juego desde un servidor (por ejemplo: python -m http.server), no con doble clic.</p>'});
 </script>
 </body>
