@@ -1,0 +1,9 @@
+# Words that look like demonyms/language names to the script but are ordinary Spanish words. They stay playable.
+africanismo algarabia atico atlante avaro bemba blanco bohemio cafre calo campechano capador capitalino canario charro
+colones criollo curo dialecto empadronar fines gaucho gañan golondrino isleño jalapeño jaques ladino lepero leones lesbiano
+lesbio macabeo macana madero mahones manaba manes menes misionero moma natural navideño padrones palmero palta pasto pekines
+pinche pintado piquense piro pisquero poblano polo quio requinto romance rodio samario selenita serrano siames simba
+tartaro tonga tortuguero troyano vandalo vendo verraco veleño vienes yuri calandino chamorro chispero choapino cachemir
+elfico koine frentudo gotico guiense habanero manchego valdiviano cantones punico baturro
+aboriginal anglicismo argentinismo germanismo bisnes
+gato
