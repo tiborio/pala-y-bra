@@ -41,8 +41,8 @@ button:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-o
 #inp{margin:22px auto 14px;max-width:420px;min-height:60px;padding:12px;background:var(--sf);border-bottom:4px solid var(--ac);font-size:30px;font-weight:800;letter-spacing:.12em;word-break:break-all}
 #inp.ph{color:var(--mu);font-size:19px;font-weight:600;letter-spacing:.08em}
 #inp b{color:var(--ac)}
-details{margin:10px 0;border:1px solid var(--ln);border-radius:12px;padding:8px 12px;text-align:left}
-summary{cursor:pointer;font-weight:700;text-align:center}
+details{margin:8px 0;border:0;background:var(--sf);border-radius:14px;padding:12px 16px;text-align:left}
+summary{cursor:pointer;font-weight:700;text-align:left}
 .chips{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:10px}
 .home{display:flex;flex-direction:column;align-items:center;gap:26px;padding:clamp(28px,9vh,84px) 4px 24px}
 .home svg{width:min(360px,100%);height:auto;display:block}
@@ -62,25 +62,26 @@ summary{cursor:pointer;font-weight:700;text-align:center}
 .tab.ho{flex:0 0 46px}
 .ahead{display:flex;align-items:center;gap:12px;margin-bottom:8px}
 .ahead h2{margin:0;font-size:28px}
-.ar{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px 4px;border:0;border-top:1px solid var(--ln);background:none;text-align:left;font-weight:700;color:var(--tx)}
-.ar .ad{flex:1 1 96px}.ar .ap{color:var(--br);letter-spacing:.06em;font-size:14px;white-space:nowrap}
+.ar{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:13px 0;border:0;border-top:1px solid var(--ln);background:none;text-align:left;font-weight:700;color:var(--tx)}
+.ar .ad{flex:1 1 96px}.ar .ap{display:flex;gap:10px;color:var(--br);letter-spacing:.06em;font-size:14px;white-space:nowrap}.ar .ap b{font-weight:800}
 .ar .am{display:flex;gap:4px}
 .m{font-style:normal;width:22px;height:22px;display:inline-grid;place-items:center;border-radius:50%;border:2px solid var(--ln);font-size:12px;color:var(--mu)}
 .m.ok{background:var(--ac);border-color:var(--ac);color:#16213e;font-weight:900}
 .m.part{border-color:var(--ac);color:var(--ac)}
-.kp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:8px 0}
-.kp div{background:var(--sf);border-radius:12px;padding:12px}
-.kp b{display:block;font-size:28px;line-height:1.1;color:var(--br)}
-.kp small{color:var(--mu);font-weight:700;font-size:13px}
-.strip{display:flex;gap:4px;margin:6px 0 2px}
-.strip i{flex:1;aspect-ratio:1;max-width:30px;border-radius:6px;background:var(--sf);border:2px solid var(--ln)}
-.strip i.l1{background:#5a6a2a22;border-color:var(--ac)}.strip i.l2{background:var(--ac);opacity:.6;border-color:var(--ac)}.strip i.l3{background:var(--ac);border-color:var(--ac)}
+.kp{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:4px 0 0}
+.kp div{background:var(--sf);border-radius:16px;padding:14px 10px 12px}
+.kp b{display:block;font-size:30px;line-height:1.1;font-weight:800;color:var(--br);font-variant-numeric:tabular-nums}.kp div:nth-child(-n+2) b{color:var(--ac);font-size:36px}
+.kp small{display:block;margin-top:4px;color:var(--mu);font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase}
+.strip{display:flex;gap:4px;margin:2px 0 6px}.stl{display:flex;justify-content:space-between;color:var(--mu);font-size:12px;font-weight:600}
+.strip i{flex:1;aspect-ratio:1;border-radius:7px;background:var(--sf)}
+.strip i.l1{background:color-mix(in srgb,var(--ac) 30%,var(--sf))}.strip i.l2{background:color-mix(in srgb,var(--ac) 65%,var(--sf))}.strip i.l3{background:var(--ac)}.strip i.hoy{box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--br)}
+h3{margin:28px 0 10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--mu);text-align:left}
 .arcbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0 0;padding:8px 12px;border-radius:12px;background:var(--sf);font-size:14px;font-weight:700;color:var(--br)}
 .arcbar button{border:0;background:none;color:var(--br);text-decoration:underline;font-weight:700}
 .sub{margin:0 0 6px;color:var(--mu)}
-.insight{background:var(--sf);border-radius:14px;padding:14px 16px;text-align:left;margin:14px 0}
+.insight{background:var(--sf);border-radius:16px;padding:16px 18px;text-align:left;margin:16px 0 4px;font-size:15px;line-height:1.5}
 .insight p{margin:0 0 8px}.insight p:last-child{margin:0}
-.rr{display:grid;grid-template-columns:44px 1fr 78px;gap:10px;align-items:center;margin:8px 0;font-weight:700;color:var(--br)}
+.rr{display:grid;grid-template-columns:52px 1fr 64px;gap:12px;align-items:center;margin:10px 0;font-weight:800;color:var(--br);white-space:nowrap;font-size:15px}
 .rr .bar{margin:0;max-width:none}
 .rr span:last-child{text-align:right;font-variant-numeric:tabular-nums;color:var(--mu)}
 .home .date{color:var(--mu);font-size:14px}.home .date::first-letter{text-transform:uppercase}.home .link{margin-top:-10px}
@@ -93,12 +94,11 @@ summary{cursor:pointer;font-weight:700;text-align:center}
 .link{background:none;border:0;color:var(--mu);text-decoration:underline;margin-top:14px}
 .btn{display:block;width:100%;padding:14px;border:0;border-radius:12px;background:var(--ac);color:#16213e;font-weight:800;font-size:18px;margin:14px 0}
 .msg{color:var(--mu);margin:18px 0 4px}
-.hl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:12px 0}
-.hl div{background:var(--sf);border-radius:12px;padding:10px 4px;font-weight:800;color:var(--br);word-break:break-word;font-size:14px}
-.hl small{display:block;color:var(--mu);font-weight:600;font-size:11px;margin-bottom:4px}
+.hl{display:flex;flex-direction:column;background:var(--sf);border-radius:16px;margin:0;padding:2px 16px}
+.hl div{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:12px 0;border-top:1px solid var(--ln);font-weight:800;color:var(--br);font-size:16px;letter-spacing:.03em;text-align:right}.hl div:first-child{border-top:0}.hl i{display:block;font-style:normal;color:var(--mu);font-weight:600;font-size:13px;letter-spacing:0;margin-top:2px}
+.hl small{color:var(--mu);font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-align:left;white-space:nowrap}
 .seg{display:flex;gap:6px;margin:14px 0}
-.seg i{flex:1;height:14px;border-radius:9px;background:var(--sf)}
-.seg i.on{background:var(--ok)}
+.seg i{flex:1;height:10px;border-radius:9px;background:var(--sf)}.seg i.on{background:var(--ac)}
 .rs{display:flex;justify-content:space-between;background:var(--sf);border-radius:12px;padding:12px 14px;margin:6px 0;font-weight:700;text-align:left}
 .rs small{display:block;color:var(--mu);font-weight:500;text-align:right}
 h2{margin:6px 0;font-size:34px;color:var(--br)}
@@ -168,13 +168,13 @@ function life(){const days=[];try{for(let i=0;i<localStorage.length;i++){const k
  return L}
 const dias=n=>n+(n==1?' día':' días');
 function lifeView(){$('#nav').innerHTML='';const L=life(),F=(k,o)=>cap(dateOf(k).toLocaleDateString('es',o)),mx=Math.max(1,...L.dist),
- strip=[...Array(14)].map((_,i)=>{const t=new Date(TODAYD.getFullYear(),TODAYD.getMonth(),TODAYD.getDate()-13+i),k=keyOf(t),c=L.ds[k];return `<i class="${c?'l'+c:''}" title="${F(k,{day:'numeric',month:'short'})}"></i>`}).join('');
+ strip=[...Array(14)].map((_,i)=>{const t=new Date(TODAYD.getFullYear(),TODAYD.getMonth(),TODAYD.getDate()-13+i),k=keyOf(t),c=L.ds[k];return `<i class="${c?'l'+c:''}${k==TODAYK?' hoy':''}" title="${F(k,{day:'numeric',month:'short'})}"></i>`}).join('');
  let o=`<div class="ahead"><button class="tab ho" onclick="goHome()" aria-label="Inicio"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg></button><h2>Estadísticas</h2></div>`;
  if(!L.days)return $('#v').innerHTML=o+`<p class="msg">Todavía no hay historial. Completa tu primera ronda y empezará tu racha.</p>`;
  o+=`<div class="kp"><div><b>${L.cur}</b><small>Racha actual</small></div><div><b>${L.best}</b><small>Mejor racha</small></div><div><b>${L.days}</b><small>Días jugados</small></div><div><b>${L.perf}</b><small>Días con 3 de 3</small></div><div><b>${L.pts}</b><small>Puntos totales</small></div><div><b>${L.w}</b><small>Palabras halladas</small></div><div><b>${L.rc}</b><small>Rondas completadas</small></div><div><b>${L.z} ✦</b><small>Palabras raras</small></div></div>
  <p class="msg">La racha cuenta los días seguidos con al menos una ronda completada, jugados el mismo día. Los del archivo suman puntos, pero no racha.</p>
- <h3>Últimos 14 días</h3><div class="strip">${strip}</div>
- <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small>${L.lg?L.lg.w:'—'}</div><div><small>Mejor palabra</small>${L.bw?L.bw.w+' · '+L.bw.p+' pts':'—'}</div></div>
+ <h3>Últimos 14 días</h3><div class="strip">${strip}</div><div class="stl"><span>${F(keyOf(new Date(TODAYD.getFullYear(),TODAYD.getMonth(),TODAYD.getDate()-13)),{day:'numeric',month:'short'})}</span><span>hoy</span></div>
+ <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small><span>${L.lg?L.lg.w+'<i>'+L.lg.w.length+' letras</i>':'—'}</span></div><div><small>Mejor palabra</small><span>${L.bw?L.bw.w+'<i>'+L.bw.p+' pts</i>':'—'}</span></div></div>
  <h3>Rondas completadas por día</h3>${L.dist.map((n,i)=>`<div class="rr"><span>${i} de 3</span><div class="bar"><i style="width:${n/mx*100}%"></i></div><span>${dias(n)}</span></div>`).join('')}`;
  $('#v').innerHTML=o}
 function openArchive(){arcv=true;home=false;render();scrollTo(0,0)}
@@ -188,7 +188,7 @@ function archiveView(){$('#nav').innerHTML='';const days=pastDays(),F=(t,o)=>t.t
  else{const gr=[];days.forEach(t=>{const g=F(t,{month:'long',year:'numeric'});let x=gr[gr.length-1];if(!x||x.g!==g)gr.push(x={g,l:[]});x.l.push(t)});
   o+=`<p class="msg">Todos los días desde el primero. Toca uno para jugarlo.</p>`+gr.map((g,gi)=>`<details ${gi==0?'open':''}><summary>${cap(g.g)}</summary>${g.l.map(t=>{const k=keyOf(t),st=readDay(k),ps=schedule(MAN,t),
    mk=[0,1,2].map(i=>{const r=st&&st.r&&st.r[i];return r&&r.x==1?'<i class="m ok">✓</i>':r&&(r.f.length||r.x)?'<i class="m part">•</i>':'<i class="m">○</i>'}).join('');
-   return `<button class="ar" onclick="playDay('${k}')"><span class="ad">${cap(F(t,{weekday:'short',day:'numeric',month:'short'}))}</span><span class="ap">${ps.map(q=>q[0]+'·'+q[2]).join('  ')}</span><span class="am">${mk}</span></button>`}).join('')}</details>`).join('')}
+   return `<button class="ar" onclick="playDay('${k}')"><span class="ad">${cap(F(t,{weekday:'short',day:'numeric',month:'short'}))}</span><span class="ap">${ps.map(q=>'<b>'+q[0]+'·'+q[2]+'</b>').join('')}</span><span class="am">${mk}</span></button>`}).join('')}</details>`).join('')}
  $('#v').innerHTML=o}
 function soon(){toast('Próximamente')}
 function next(){const i=S.r.findIndex(r=>!r.x);go(i<0?3:i)}
@@ -219,7 +219,7 @@ function stats(){const rs=S.r,all=rs.flatMap(r=>r.f).map(n=>D.get(n)),n=tier(),W
   else L.push(n==3?'Tres rondas completas: has cavado el día entero.':n==0?'Hoy has cerrado las tres rondas sin completarlas. Mañana, nuevos pares.':`Completaste ${n} de 3 rondas y cerraste el resto. Mañana, nuevos pares.`)}
  let o=`<h2>${TIERS[n]}</h2><p class="sub">${n} de 3 rondas completadas</p><div class="seg">${rs.map(r=>`<i class="${r.x==1?'on':''}"></i>`).join('')}</div>
  <div class="insight">${L.map(l=>`<p>${l}</p>`).join('')}</div>
- <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small>${lg?lg.w:'—'}</div><div><small>Más rara ✦</small>${rr?rr.w:'—'}</div><div><small>Mejor ronda</small>${br?br.k+' · '+br.t+' pts':'—'}</div></div>
+ <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small><span>${lg?lg.w+'<i>'+lg.n.length+' letras</i>':'—'}</span></div><div><small>Más rara ✦</small><span>${rr?rr.w+'<i>'+rr.p+' pts</i>':'—'}</span></div><div><small>Mejor ronda</small><span>${br?br.k+'<i>'+br.t+' pts</i>':'—'}</span></div></div>
  <h3>Progreso por ronda</h3>${picks.map((k,i)=>{const t=Math.min(tot(i),GO(i));return `<div class="rr"><span>${k}</span><div class="bar"><i style="width:${t/GO(i)*100}%"></i></div><span>${t} / ${GO(i)}</span></div>`}).join('')}
  <button class="btn" onclick="share()">Compartir resultados</button>`;
  if(fin){const got=new Set(rs.flatMap(r=>r.f)),miss=picks.flatMap(k=>P[k].filter(x=>x.b!='r'&&!got.has(x.n))).sort((a,b)=>b.p-a.p).slice(0,6);
