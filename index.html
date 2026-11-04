@@ -163,8 +163,11 @@ h2{margin:10px 0 6px;font-size:34px;color:var(--br)}
 #m>div{background:var(--bg);border-radius:18px;width:100%;max-width:400px;padding:26px 22px 20px;position:relative;min-height:300px;max-height:100%;overflow:auto;display:flex;flex-direction:column}
 #m .cr p{font-size:15px;margin:0 0 12px;text-align:left}
 #m .cr a{color:var(--br);font-weight:700}
-#m h3{font-size:26px;margin:14px 0 8px;color:var(--br)}
+#m h3{text-transform:none;letter-spacing:0;text-align:center;font-size:26px;margin:14px 0 8px;color:var(--br)}
 #m p{margin:0;font-size:17px}
+.vz{display:flex;flex-direction:column;gap:12px;margin-top:18px}.vr{display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;color:var(--mu)}.vr b{color:var(--tx)}.vl{height:1px;background:var(--ln);margin:2px 0}.vg{display:flex;flex-direction:column;align-items:center;gap:0}.vg .bar{width:100%;margin:12px auto 0}.vg small{margin-top:8px;color:var(--mu);font-weight:600}
+.rep.ok{text-decoration:none;color:var(--mu)}
+.rep{display:block;margin:6px auto 0;border:0;background:none;color:var(--br);font-size:14px;font-weight:700;text-decoration:underline;padding:8px}
 .x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:1px solid var(--ln);background:var(--sf)}
 .nv{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:20px}
 .nv button{min-width:48px;height:48px;border-radius:24px;border:2px solid var(--ln);background:var(--sf);font-size:20px;padding:0 16px}
@@ -250,10 +253,19 @@ function nav(){const T=S.r.reduce((a,r,i)=>a+tot(i),0);
  $('#nav').innerHTML=`<div class="hd"><b>${TIERS[tier()]}</b><i class="bdg">${T}</i><div class="sg">${S.r.map((r,i)=>`<span><u style="width:${r.x==1?100:Math.min(100,tot(i)/GO(i)*100)}%"></u></span>`).join('')}</div></div>
  <div class="nr"><div class="ig"><button class="ib" onclick="goHome()" aria-label="Inicio"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg><small>Inicio</small></button><button class="ib" onclick="openArchive()" aria-label="Archivo"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/></svg><small>Archivo</small></button></div><div class="tg">${picks.map((k,i)=>{const x=S.r[i].x,f=S.r[i].f.length;return `<button class="tb ${v==i?'on':''}" onclick="go(${i})"><i class="dt ${x==1?'ok':x==2?'cl':f?'pt':''}">${x==1?'✓':x==2?'–':''}</i><b>${k}</b></button>`}).join('')}</div><div class="ig"><button class="ib${v==3?' on':''}" onclick="go(3)" aria-label="Stats"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20V10M12 20V4M19 20v-7"/></svg><small>Stats</small></button><button class="ib" onclick="rules(0)" aria-label="Reglas"><svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.6 2.2c-.7.4-1.1.9-1.1 1.8"/><path d="M12 17h.01"/></svg><small>Reglas</small></button></div></div>`}
 function chips(f){return f.map(n=>{const o=D.get(n);return `<span class="chip ${o.r?'r':''}">${o.w}${o.r?' ✦':''}</span>`}).join('')}
-function inp(){const e=$('#inp');if(!e)return;if(!cur){e.className='ph';e.textContent='ESCRIBE UNA PALABRA…'}else{e.className='';e.innerHTML='<b>'+cur[0]+'</b>'+cur.slice(1)}}
+let missW='';
+// Reportes de palabras: pega aquí los datos de tu Google Form (ver instrucciones). Vacío = solo copia la palabra.
+const REPORT_FORM={url:'',word:'',pair:''};
+function report(w){const F=REPORT_FORM,key='pdl-rep',done=(()=>{try{return JSON.parse(localStorage.getItem(key))||[]}catch(e){return[]}})();
+ try{navigator.clipboard.writeText(w).catch(()=>{})}catch(e){}
+ if(!F.url){toast('Palabra copiada');return}
+ if(!done.includes(w)){const b=new URLSearchParams();b.set(F.word,w);if(F.pair)b.set(F.pair,picks[v]+' · '+DK);
+  fetch(F.url,{method:'POST',mode:'no-cors',body:b}).catch(()=>{});try{done.push(w);localStorage.setItem(key,JSON.stringify(done.slice(-100)))}catch(e){}}
+ const q=$('#rp');if(q)q.innerHTML='<span class="rep ok">Enviada ✓ Gracias, la revisaremos</span>';toast('Gracias, la revisaremos')}
+function inp(){const q=$('#rp');if(q&&cur!==missW)q.innerHTML='';const e=$('#inp');if(!e)return;if(!cur){e.className='ph';e.textContent='ESCRIBE UNA PALABRA…'}else{e.className='';e.innerHTML='<b>'+cur[0]+'</b>'+cur.slice(1)}}
 function game(){const i=v,k=picks[i],r=S.r[i],g=GO(i),t=Math.min(tot(i),g);
  let o=`<div class="pair"><span>${k[0]}</span><svg class="tc${r.x==1?' up':''}" viewBox="0 0 96 64" aria-hidden="true"><defs><clipPath id="tcc"><rect x="-10" y="-40" width="116" height="104"/></clipPath><radialGradient id="tcg"><stop offset="0" stop-color="var(--ac)" stop-opacity=".9"/><stop offset="1" stop-color="var(--ac)" stop-opacity="0"/></radialGradient></defs><circle class="glow" cx="48" cy="26" r="34" fill="url(#tcg)"/><g clip-path="url(#tcc)"><g class="chest"><rect x="26" y="30" width="44" height="26" rx="4" fill="var(--ac)"/><rect x="26" y="40" width="44" height="3.5" fill="var(--soil)" opacity=".35"/><rect x="45" y="36" width="6" height="9" rx="1.5" fill="var(--soil)"/><g class="lid"><path d="M26 30 Q26 14 48 14 Q70 14 70 30Z" fill="var(--ac)"/><path d="M26 30 Q26 14 48 14 Q70 14 70 30Z" fill="#000" opacity=".14"/><rect x="45" y="22" width="6" height="8" rx="1.5" fill="var(--soil)"/></g></g></g><path d="M-6 66 C8 44 28 38 48 38 S88 44 102 66Z" fill="var(--soil)" stroke="var(--soil2)" stroke-width="2"/><g fill="var(--soil2)"><circle cx="20" cy="56" r="2"/><circle cx="74" cy="53" r="2.4"/><circle cx="52" cy="60" r="1.8"/></g><g class="sps" font-size="13" fill="var(--ac)" text-anchor="middle"><text class="sp" x="24" y="24">✦</text><text class="sp" x="72" y="20">✦</text><text class="sp" x="48" y="8">✦</text></g></svg><span>${k[2]}</span></div><div class="pill${r.x==1?' gold':''}">${t} / ${g} pts</div><div class="bar"><i style="width:${t/g*100}%"></i></div>`;
- if(!r.x){o+=`<div id="inp"></div>`}
+ if(!r.x){o+=`<div id="inp"></div><div id="rp"></div>`}
  else{o+=`<p class="msg">${r.x==1?'¡Ronda completada!':'Ronda cerrada. Palabras que pudiste jugar:'}</p>`;
   if(r.x==2){const m=P[k].filter(x=>!r.f.includes(x.n)&&x.b!='r').sort((a,b)=>b.p-a.p).slice(0,3);o+=`<div class="chips">${m.map(x=>`<span class="chip ${x.r?'r':''}">${x.w} · ${x.p}</span>`).join('')}</div>`}
   o+=`<button class="btn" onclick="next()">${S.r.every(r=>r.x)?'Ver resumen':'Siguiente ronda'}</button>`}
@@ -319,7 +331,7 @@ function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
  if(w.length<4)m='Mínimo 4 letras';
  else if(w[0]!=k[0]||w[w.length-1]!=k[2])m=`Debe empezar con ${k[0]} y terminar con ${k[2]}`;
  else if(r.f.includes(w))m='Ya la tienes';
- else if(!D.has(w))m='No está en el diccionario';
+ else if(!D.has(w)){m='No está en el diccionario';missW=w;const q=$('#rp');if(q)q.innerHTML=`<button class="rep" onclick="report(missW)">¿Es válida? Avísame de «${w}»</button>`}
  if(m){const e=$('#inp');if(e){e.classList.remove('sh');void e.offsetWidth;e.classList.add('sh')}return toast(m)}
  r.f.push(w);cur='';toast('+'+D.get(w).p+' pts'+(D.get(w).r?' ✦':''));const RW=D.get(w).r;if(RW)dig();
  if(tot(v)>=GO(v)){r.x=1;save();render();document.querySelectorAll('#v .pair,#v .bar').forEach(e=>e.classList.add('win'));if(RW)praise()}else{save();render();if(RW)praise()}}
@@ -328,7 +340,8 @@ document.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)
 addEventListener('keydown',e=>{if($('#m').classList.contains('open')||e.ctrlKey||e.metaKey||e.altKey)return;
  if(e.key=='Enter'){if(document.activeElement.tagName=='BUTTON')return;key('ENTER')}else if(e.key=='Backspace')key('BACK');else if(/^[a-zñáéíóúü]$/i.test(e.key))key(N(e.key))});
 const RL=[['Une las letras','Cada palabra debe empezar y terminar con las letras de hoy. Las tildes no importan, y valen plurales, femeninos y verbos conjugados.'],
-['Más larga, más puntos','Mínimo 4 letras. Cuanto más larga la palabra, más puntos. Las palabras raras ✦ valen el doble.'],
+['Más larga, más puntos','Mínimo 4 letras. Cuanto más larga la palabra, más puntos.'],
+['Raras ✦ y la meta','Las palabras que casi nadie escribe valen el doble. Llena la barra hasta la meta para completar la ronda.','<div class="vz"><div class="vr"><span class="chip">Palabra común</span><span>6 letras · <b>3 pts</b></span></div><div class="vr"><span class="chip r">Palabra rara ✦</span><span>6 letras · <b>6 pts</b></span></div><div class="vl"></div><div class="vg"><span class="pill">28 / 56 pts</span><div class="bar"><i style="width:50%"></i></div></div><div class="vg"><span class="pill gold">56 / 56 pts</span><div class="bar"><i style="width:100%"></i></div><small>¡Ronda completada!</small></div></div>'],
 ['Sin nombres propios','No valen nombres propios ni gentilicios de países, ciudades o regiones, como «danés» o «parisino». Sí valen las palabras con otro significado, como «gato» o «canario».'],
 ['Sube a Perfeccionista','Alcanza la meta en las 3 rondas para llegar al nivel más alto.'],
 ['¿Atascado? Ríndete','Cierra la ronda para asegurar tus puntos y ver palabras que podías jugar.']];
@@ -340,7 +353,7 @@ function credits(){const m=$('#m');m.classList.add('open');
  <p>Los datos de palabras de este juego se comparten bajo la misma licencia, CC BY-SA 4.0.</p></div>
  <div class="nv"><span></span><button onclick="$('#m').classList.remove('open')">Cerrar</button></div>`}
 function rules(i){const m=$('#m');m.classList.add('open');
- $('#mc').innerHTML=`<button class="x" aria-label="Cerrar" onclick="$('#m').classList.remove('open')">✕</button><h3>${RL[i][0]}</h3><p>${RL[i][1]}</p>
+ $('#mc').innerHTML=`<button class="x" aria-label="Cerrar" onclick="$('#m').classList.remove('open')">✕</button><h3>${RL[i][0]}</h3><p>${RL[i][1]}</p>${RL[i][2]||''}
  <div class="nv">${i?`<button aria-label="Anterior" onclick="rules(${i-1})">←</button>`:'<span></span>'}<span class="dots">${RL.map((_,j)=>`<i class="${j==i?'on':''}"></i>`).join('')}</span>${i<RL.length-1?`<button aria-label="Siguiente" onclick="rules(${i+1})">→</button>`:`<button onclick="$('#m').classList.remove('open')">${home?'Entendido':'Jugar'}</button>`}</div>`}
 load().then(boot).catch(()=>{$('#v').innerHTML='<p class="msg">No se pudieron cargar los datos. Abre el juego desde un servidor (por ejemplo: python -m http.server), no con doble clic.</p>'});
 </script>
