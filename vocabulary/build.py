@@ -5,7 +5,8 @@ import re,json,sys,os,unicodedata,collections
 MIN_COMMON=25     # pair needs this many words found in the 50k frequency list
 MAX_TOTAL=10**9   # optional cap on pair size
 GOAL=30            # fallback
-GMIN,GMAX,GW=20,72,5   # goal = (words a native should find) x (avg points per word); words = GW*log10(effective pool size)
+GMIN,GMAX,GW=28,100,7   # Spanish has many more valid forms (conjugations etc.), so goals are higher than the first version (20/72/5)
+MAXSHARE=0.30          # a goal never asks for more than 30% of the points available from common + known words   # goal = (words a native should find) x (avg points per word); words = GW*log10(effective pool size)
 BLOCK=set("puta puto putas putos mierda coño joder cabron cabrona pendejo pendeja verga marica maricon mamon chingar zorra".split())
 def N(s):
     s=unicodedata.normalize('NFD',s.replace('ñ','#'))
@@ -89,7 +90,8 @@ def goal(ws):
     c=[w for w in ws if band(w)=='c'];m=[w for w in ws if band(w)=='m'];r=len(ws)-len(c)-len(m)
     cm=c+m;avg=sum(len(w)-3 for w in cm)/len(cm)
     pool=len(c)+0.5*len(m)+0.05*r          # common words count fully, known words half, long-tail words a little
-    return max(GMIN,min(GMAX,4*round(GW*math.log10(pool)*avg/4)))
+    top=sum(len(w)-3 for w in cm)
+    return max(GMIN,min(GMAX,int(MAXSHARE*top)//4*4,4*round(GW*math.log10(pool)*avg/4)))
 GOALS={k:goal(pairs[k]) for k in keep}
 start=sys.argv[1] if len(sys.argv)>1 else '2026-11-04'
 if os.path.exists('seasons.json'): seasons=json.load(open('seasons.json'))
