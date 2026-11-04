@@ -19,7 +19,30 @@ for l in open('es_50k.txt',encoding='utf-8'):
 CL=re.compile(r'^[a-zñ]*(ar|er|ir)(me|te|se|lo|la|le|nos|los|las|les)$')
 add={w for w in rank if w not in words and cnt[w]>=100 and CL.match(w)}
 print('clitic verb forms added:',len(add),sorted(add,key=lambda w:rank[w])[:12])
-allw={w for w in words|add if ok(w) and w not in BLOCK and w.rstrip('s') not in BLOCK}
+def _load(f):
+    return {l.split()[0] for l in open(f,encoding='utf-8') if l.strip() and not l.startswith('#')} if os.path.exists(f) else set()
+def _loadw(f):
+    out=set()
+    if os.path.exists(f):
+        for l in open(f,encoding='utf-8'):
+            if not l.startswith('#'): out|=set(l.split())
+    return out
+EXC=_load('excluir.txt')                             # proper nouns, demonyms, language names (from extraer.js)
+def _forms(p):                                       # an allowed word also allows its plural / feminine forms
+    s={p,p+'s',p+'es'}
+    if p[-1] in 'oa': s|={p[:-1]+x for x in ('a','o','as','os')}
+    return s
+def _expand(b):
+    s={b,b+'s',b+'es',b+'a',b+'as'}
+    if b[-1]=='o': s|={b[:-1]+x for x in ('a','as','os')}
+    return s
+for b in _loadw('excluir_extra.txt'):
+    EXC|=_expand(unicodedata.normalize('NFD',b.replace('ñ','#')).encode('ascii','ignore').decode().replace('#','ñ'))
+PERM=set()
+for p in _loadw('permitir.txt'): PERM|=_forms(p)
+EXC-=PERM                                            # ordinary words wrongly flagged
+print('excluded as proper noun/demonym:',len(EXC))
+allw={w for w in words|add if ok(w) and w not in BLOCK and w.rstrip('s') not in BLOCK and w not in EXC}
 band=lambda w:'c' if rank.get(w,10**9)<10000 else 'm' if w in rank else 'r'
 fn=lambda k:k.lower().replace('ñ','0')
 pairs=collections.defaultdict(list)
@@ -51,6 +74,4 @@ else: seasons=[{'start':start,'pairs':keep}];json.dump(seasons,open('seasons.jso
 json.dump({'goal':GOAL,'goals':GOALS,'seasons':seasons},open('data/manifest.json','w'))
 print('allowed words:',len(allw),'| eligible pairs:',len(keep),'| data size KB:',size//1024,'| largest file KB:',max(os.path.getsize('data/'+f) for f in os.listdir('data'))//1024)
 print('days before any repeat:',len(keep)//3)
-import statistics as st;v=sorted(GOALS.values());print('goal min/median/max:',v[0],st.median(v),v[-1]);print('goal histogram:',sorted(collections.Counter(v).items()))
-print('examples:',{k:GOALS[k] for k in ['S-A','T-O','V-A','J-O','H-O','V-R','C-A','A-N','C-I','J-E','Q-N'] if k in GOALS})
-print('lowest 8:',sorted(GOALS.items(),key=lambda x:x[1])[:8])
+print('goals:',{k:GOALS[k] for k in ['S-A','T-O','J-O','C-I','C-A','V-R'] if k in GOALS})

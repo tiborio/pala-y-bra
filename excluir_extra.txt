@@ -1,0 +1,17 @@
+# Demonyms (gentilicios) the Wiktionary pass missed. Base forms; plurals/feminines are generated automatically.
+# Americas
+hondureño nicaraguense costarricense salvadoreño guatemalteco panameño colombiano venezolano ecuatoriano peruano boliviano chileno argentino uruguayo paraguayo brasileño brasilero cubano dominicano haitiano puertorriqueño boricua mexicano mejicano estadounidense norteamericano sudamericano centroamericano latinoamericano iberoamericano hispanoamericano canadiense jamaiquino jamaicano bahameño beliceño guyanes surinames trinitense caribeño antillano guayanes
+# Europe
+aleman frances ingles britanico italiano portugues español holandes neerlandes belga suizo austriaco sueco noruego danes finlandes islandes irlandes escoces gales polaco checo eslovaco hungaro rumano bulgaro serbio croata esloveno bosnio albanes griego turco ruso ucraniano bielorruso lituano leton letonio estonio maltes luxemburgues monegasco andorrano sanmarinense vaticano macedonio montenegrino moldavo chipriota georgiano armenio azerbaiyano
+# Asia / Middle East
+chino japones coreano norcoreano surcoreano indio hindu pakistani afgano irani iraní iraqui iraki saudi saudita sirio libanes israeli jordano kuwaiti qatari emirati yemeni omani tailandes vietnamita camboyano laosiano birmano malayo indonesio filipino singapurense nepali nepales bangladesi esrilanques mongol kazajo uzbeko turcomano kirguiso tayiko taiwanes butanes maldivo palestino
+# Africa / Oceania
+egipcio marroqui argelino tunecino libio sudanes etiope keniano keniata somali tanzano ugandes nigeriano ghanes senegales camerunes congoleño angoleño mozambiqueño sudafricano zimbabuense namibio botsuano ruandes malgache liberiano gambiano guineano ecuatoguineano maliense nigerino chadiano mauritano australiano neozelandes fiyiano samoano tongano
+# Continents
+europeo africano asiatico americano oceanico
+# Spain: regions and cities
+madrileño barcelones sevillano andaluz catalan gallego vasco valenciano murciano aragones navarro asturiano cantabro balear mallorquin extremeño riojano gaditano malagueño granadino cordobes zaragozano bilbaino vallisoletano alicantino coruñes vigues pamplones donostiarra vitoriano toledano segoviano salmantino burgales leones santanderino
+# Mexico: states and cities
+yucateco jalisciense tapatio regiomontano neoleones veracruzano oaxaqueño chiapaneco tabasqueño sonorense sinaloense michoacano guanajuatense queretano hidalguense coahuilense tamaulipeco guerrerense morelense tlaxcalteca nayarita durangueño zacatecano potosino bajacaliforniano chilango tijuanense
+# Latin America: cities and regions
+bogotano limeño quiteño caraqueño porteño paceño santiaguino asunceno montevideano sanjuanino cordobes mendocino rosarino guayaquileño cuencano medellinense antioqueño caleño cartagenero barranquillero maracucho valenciano arequipeño cusqueño sanjosino habanero santiaguero
