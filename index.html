@@ -104,6 +104,16 @@ h3{margin:28px 0 10px;font-size:12px;font-weight:800;letter-spacing:.14em;text-t
 h2{margin:6px 0;font-size:34px;color:var(--br)}
 #t{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--tx);color:var(--bg);padding:10px 18px;border-radius:99px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s;max-width:90%}
 #t.s{opacity:1}
+@keyframes sh{0%,100%{transform:none}20%{transform:translateX(-8px)}40%{transform:translateX(7px)}60%{transform:translateX(-5px)}80%{transform:translateX(3px)}}
+@keyframes pop{0%{transform:scale(1)}35%{transform:scale(1.14) rotate(-2deg)}70%{transform:scale(.97)}100%{transform:scale(1)}}
+@keyframes glow{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ac) 70%,transparent)}100%{box-shadow:0 0 0 14px transparent}}
+@keyframes dig{0%{stroke-dashoffset:0}100%{stroke-dashoffset:-32}}
+#inp.sh{animation:sh .38s ease;border-bottom-color:#e5484d}
+.pair.win span{display:inline-block;animation:pop .6s ease}
+.pair.win span:last-child{animation-delay:.12s}
+.pair.win .arch{animation:glow .9s ease-out 1}
+.bar.win{animation:glow .9s ease-out 1}
+@media(prefers-reduced-motion:reduce){#inp.sh,.pair.win span,.pair.win .arch,.bar.win{animation:none}}
 #m{position:fixed;inset:0;background:rgba(10,14,25,.6);display:none;align-items:center;justify-content:center;padding:16px}
 #m.open{display:flex}
 #m>div{background:var(--bg);border-radius:18px;width:100%;max-width:400px;padding:26px 22px 20px;position:relative;min-height:300px;max-height:100%;overflow:auto;display:flex;flex-direction:column}
@@ -228,13 +238,13 @@ function stats(){const rs=S.r,all=rs.flatMap(r=>r.f).map(n=>D.get(n)),n=tier(),W
  o+=arch?`<button class="btn" onclick="backToday()">Volver a hoy</button>`:`<p class="msg">Próximo puzle en <b id="cd"></b></p>`;$('#v').innerHTML=o;tick()}
 function tick(){const e=$('#cd');if(!e)return;const n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1),s=Math.floor((m-n)/1000),p=x=>String(x).padStart(2,'0');e.textContent=p(s/3600|0)+':'+p(s/60%60|0)+':'+p(s%60)}
 setInterval(tick,1000);
-function share(){const t=`Pala y Bra ${DK}\n`+picks.map((k,i)=>`${k} ${S.r[i].x==1?'⭐':'▫️'} ${tot(i)} pts`).join('\n')+`\n${TIERS[tier()]}\nhttps://tiborio.github.io/pala-y-bra/`;
+function share(){const st=life().cur,t=`Pala y Bra · ${dateOf(DK).toLocaleDateString('es',{day:'numeric',month:'short'})}${arch?' (archivo)':''}\n`+picks.map((k,i)=>`${k} ${S.r[i].x==1?'⭐':'▫️'} ${tot(i)} pts`).join('\n')+`\n${TIERS[tier()]}${!arch&&st?' · Racha '+st:''}\nhttps://tiborio.github.io/pala-y-bra/`;
  try{navigator.clipboard.writeText(t).then(()=>toast('Resultados copiados'),()=>toast(t))}catch(e){toast('No se pudo copiar')}}
 function giveUp(){S.r[v].x=2;save();render()}
 const LOGO=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 230" role="img" aria-label="Una pala desenterrando la palabra BRA"><defs><clipPath id="pbh"><rect width="360" height="230" rx="34"/></clipPath></defs><rect width="360" height="230" rx="34" fill="var(--sf)"/><g clip-path="url(#pbh)"><g font-family="'Avenir Next','Segoe UI','Helvetica Neue',Arial,sans-serif" font-weight="900" font-size="104" fill="var(--br)" letter-spacing="3"><text x="106" y="159">BRA</text></g><g transform="translate(72 204) rotate(-9)"><rect x="-5.5" y="-182" width="11" height="104" rx="5.5" fill="var(--ac)"/><rect x="-23" y="-198" width="46" height="17" rx="8.5" fill="var(--ac)"/><path d="M-8 -88 H8 L12 -76 H-12Z" fill="var(--steel2)"/><path d="M-26 -62 Q-26 -80 -13 -80 H13 Q26 -80 26 -62 Q26 -26 0 6 Q-26 -26 -26 -62Z" fill="var(--steel)"/><path d="M-17 -64 Q-17 -42 -5 -20" fill="none" stroke="var(--hi)" stroke-width="3.2" stroke-linecap="round" opacity=".8"/></g><path d="M-4 156 C40 140 96 136 150 142 S238 152 286 144 S338 138 364 146 V240 H-4Z" fill="var(--soil)"/><g fill="var(--soil2)"><circle cx="38" cy="184" r="3.4"/><circle cx="84" cy="176" r="2.6"/><circle cx="126" cy="194" r="3.2"/><circle cx="178" cy="180" r="2.4"/><circle cx="222" cy="198" r="3"/><circle cx="62" cy="212" r="2.6"/><circle cx="150" cy="214" r="2.4"/><circle cx="330" cy="188" r="2.8"/></g><g fill="var(--soil)"><circle cx="100" cy="112" r="4.6"/><circle cx="114" cy="130" r="3"/><circle cx="88" cy="94" r="3"/><circle cx="26" cy="112" r="3.6"/></g></g></svg>`;
 function homeView(){$('#nav').innerHTML='';
  const done=S.r.every(r=>r.x),started=S.r.some(r=>r.f.length||r.x),c=S.r.filter(r=>r.x==1).length,
- dt=new Date().toLocaleDateString('es',{weekday:'long',day:'numeric',month:'long'}),
+ dt=d.toLocaleDateString('es',{weekday:'long',day:'numeric',month:'long'}),
  ic=d=>`<svg viewBox="0 0 24 24" aria-hidden="true">${d}</svg>`;
  $('#v').innerHTML=`<button class="hrules" onclick="rules(0)" aria-label="Reglas">?</button><div class="home">${LOGO}<h1>Pala <i>y</i> Bra</h1><p class="tag">Cava la palabra que une las dos letras</p>
  <div class="daily"><div class="today" aria-label="Pares de hoy">${picks.map(k=>`<span>${k[0]} · ${k[2]}</span>`).join('')}</div>
@@ -252,9 +262,9 @@ function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
  else if(w[0]!=k[0]||w[w.length-1]!=k[2])m=`Debe empezar con ${k[0]} y terminar con ${k[2]}`;
  else if(r.f.includes(w))m='Ya la tienes';
  else if(!D.has(w))m='No está en el diccionario';
- if(m)return toast(m);
+ if(m){const e=$('#inp');if(e){e.classList.remove('sh');void e.offsetWidth;e.classList.add('sh')}return toast(m)}
  r.f.push(w);cur='';toast('+'+D.get(w).p+' pts'+(D.get(w).r?' ✦':''));
- if(tot(v)>=GO(v)){r.x=1;save();render();setTimeout(()=>{if(!home&&!arcv&&!lsv&&S.r[v]===r&&v<3&&S.r.some(q=>!q.x))next()},1600)}else{save();render()}}
+ if(tot(v)>=GO(v)){r.x=1;save();render();document.querySelectorAll('#v .pair,#v .bar').forEach(e=>e.classList.add('win'));setTimeout(()=>{if(!home&&!arcv&&!lsv&&S.r[v]===r&&v<3&&S.r.some(q=>!q.x))next()},1600)}else{save();render()}}
 function key(c){if(home||arcv||lsv){if(home&&c=='ENTER')play();return}if(v>2||S.r[v].x)return;if(c=='ENTER')sub();else if(c=='BACK'){cur=cur.slice(0,-1);inp()}else if(cur.length<20){cur+=c;inp()}}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)key(b.dataset.k)});
 addEventListener('keydown',e=>{if($('#m').classList.contains('open')||e.ctrlKey||e.metaKey||e.altKey)return;
