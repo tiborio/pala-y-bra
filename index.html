@@ -23,7 +23,7 @@ html{scroll-padding-top:env(safe-area-inset-top,0px)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.4 "Avenir Next","Segoe UI",system-ui,sans-serif;display:flex;justify-content:center}
 #app{position:relative;width:100%;max-width:520px;padding:12px 14px 24px;text-align:center}
-.hrules{position:absolute;top:12px;right:14px;width:46px;height:46px;border-radius:12px;border:2px solid var(--ln);background:var(--sf);font-weight:800;font-size:20px;color:var(--br)}
+.hrules{position:fixed;top:12px;right:14px;z-index:5;width:46px;height:46px;border-radius:12px;border:2px solid var(--ln);background:var(--sf);font-weight:800;font-size:20px;color:var(--br)}
 button{font:inherit;color:inherit;cursor:pointer}
 button:focus-visible,summary:focus-visible{outline:3px solid var(--ac);outline-offset:2px}
 #nav{display:flex;gap:6px;justify-content:center}
@@ -60,6 +60,16 @@ summary{cursor:pointer;font-weight:700;text-align:center}
 .home .tile em{font-style:normal;font-size:10px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--br);margin-top:4px}
 .home .tile svg{width:26px;height:26px;margin:0 0 4px;stroke:var(--br);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .tab.ho{flex:0 0 46px}
+.ahead{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.ahead h2{margin:0;font-size:28px}
+.ar{display:flex;align-items:center;justify-content:space-between;gap:10px;width:100%;padding:12px 4px;border:0;border-top:1px solid var(--ln);background:none;text-align:left;font-weight:700;color:var(--tx)}
+.ar .ad{flex:1 1 96px}.ar .ap{color:var(--br);letter-spacing:.06em;font-size:14px;white-space:nowrap}
+.ar .am{display:flex;gap:4px}
+.m{font-style:normal;width:22px;height:22px;display:inline-grid;place-items:center;border-radius:50%;border:2px solid var(--ln);font-size:12px;color:var(--mu)}
+.m.ok{background:var(--ac);border-color:var(--ac);color:#16213e;font-weight:900}
+.m.part{border-color:var(--ac);color:var(--ac)}
+.arcbar{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:8px 0 0;padding:8px 12px;border-radius:12px;background:var(--sf);font-size:14px;font-weight:700;color:var(--br)}
+.arcbar button{border:0;background:none;color:var(--br);text-decoration:underline;font-weight:700}
 .sub{margin:0 0 6px;color:var(--mu)}
 .insight{background:var(--sf);border-radius:14px;padding:14px 16px;text-align:left;margin:14px 0}
 .insight p{margin:0 0 8px}.insight p:last-child{margin:0}
@@ -103,36 +113,53 @@ h2{margin:6px 0;font-size:34px;color:var(--br)}
 </style>
 </head>
 <body>
-<div id="app"><div id="nav"></div><main id="v"></main></div>
+<div id="app"><div id="nav"></div><div id="ab"></div><main id="v"></main></div>
 <div id="t" role="status"></div>
 <div id="m" role="dialog" aria-modal="true"><div id="mc"></div></div>
 <script>
-let GOALS={},picks=[],S,v=0,cur='',home=true,wordsOpen=true;
+let GOALS={},picks=[],S,v=0,cur='',home=true,wordsOpen=true,arch=false,arcv=false,MAN=null,booted=false;
 const $=s=>document.querySelector(s);
 const N=s=>s.toUpperCase().replace(/Ñ/g,'#').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/#/g,'Ñ');
 const D=new Map(),P={},fn=k=>k.toLowerCase().replace(/ñ/g,'0');
 const Q=new URLSearchParams(location.search),TEST=Q.has('fecha')||Q.has('par'),SK=TEST?'pdl-test':'pdl';
 let d=new Date();if(Q.has('fecha')){const t=Q.get('fecha').split('-').map(Number);if(t.length==3&&t.every(Number.isFinite))d=new Date(t[0],t[1]-1,t[2])}
-const DK=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+let DK=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();const TODAYD=new Date(d),TODAYK=DK;
 const dn=(y,m,x)=>Date.UTC(y,m-1,x)/864e5,hs=s=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h};
 function perm(L,seed){let a=seed>>>0;const r=()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296};const p=[...Array(L).keys()];for(let i=L-1;i>0;i--){const j=Math.floor(r()*(i+1));[p[i],p[j]]=[p[j],p[i]]}return p}
 function cyc(L,start,c){let q=perm(L,hs(start+':0'));for(let i=1;i<=c;i++){const bad=new Set(q.slice(-Math.floor(L/3)));q=perm(L,hs(start+':'+i));q=[...q.filter(x=>!bad.has(x)),...q.filter(x=>bad.has(x))]}return q}
 function schedule(m,date){const T=dn(date.getFullYear(),date.getMonth()+1,date.getDate());let se=m.seasons[0];for(const s of m.seasons)if(dn(...s.start.split('-').map(Number))<=T)se=s;
  const L=se.pairs.length,di=Math.max(0,T-dn(...se.start.split('-').map(Number)));
  return [0,1,2].map(r=>{const p=di*3+r;return se.pairs[cyc(L,se.start,Math.floor(p/L))[p%L]]})}
-async function load(){const m=await(await fetch('data/manifest.json')).json();GOALS=m.goals||{};picks=schedule(m,d);if(Q.has('par'))Q.get('par').toUpperCase().split(',').slice(0,3).forEach((k,i)=>{if(/^[A-ZÑ]-[A-ZÑ]$/.test(k))picks[i]=k});
+async function load(){const m=await(await fetch('data/manifest.json')).json();GOALS=m.goals||{};MAN=m;picks=schedule(m,d);if(Q.has('par')&&!arch)Q.get('par').toUpperCase().split(',').slice(0,3).forEach((k,i)=>{if(/^[A-ZÑ]-[A-ZÑ]$/.test(k))picks[i]=k});
  const fs=await Promise.all(picks.map(async k=>(await fetch('data/'+fn(k)+'.json')).json()));
  fs.forEach(f=>{P[f.k]=[];const U=new Set(f.u?f.u.toUpperCase().split(' '):[]);for(const b of['c','m','r'])if(f[b])f[b].split(' ').forEach(x=>{const w=x.toUpperCase(),R=b=='r'&&!U.has(w),o={w,n:w,r:R,b,p:(w.length-3)*(R?2:1),k:f.k};D.set(w,o);P[f.k].push(o)})})}
-const GO=i=>GOALS[picks[i]]||30,save=()=>{try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){}};
+const GO=i=>GOALS[picks[i]]||30,save=()=>{try{localStorage.setItem(SK+':'+DK,JSON.stringify(S))}catch(e){}};
 const tot=i=>S.r[i].f.reduce((a,n)=>a+D.get(n).p,0);
-function boot(){if(TEST)home=false;try{S=JSON.parse(localStorage.getItem(SK))}catch(e){}
- if(!S||S.d!==DK||(TEST&&S.t!==picks.join()))S={d:DK,t:picks.join(),r:picks.map(()=>({f:[],x:0}))};
+function boot(){if(!booted&&TEST)home=false;booted=true;S=null;try{S=JSON.parse(localStorage.getItem(SK+':'+DK))}catch(e){}
+ if(!S&&!arch){try{const o=JSON.parse(localStorage.getItem(SK));if(o&&o.d===DK){S=o;localStorage.removeItem(SK);save()}}catch(e){}}
+ if(!S||S.d!==DK||(TEST&&!arch&&S.t!==picks.join()))S={d:DK,t:picks.join(),r:picks.map(()=>({f:[],x:0}))};
  v=S.r.every(r=>r.x)?3:Math.max(0,S.r.findIndex(r=>!r.x));render()}
 const TIERS=['Aprendiz','Buen comienzo','¡Genial!','¡Perfeccionista!'];
 const tier=()=>S.r.filter(r=>r.x==1).length;
 function toast(m){const t=$('#t');t.textContent=m;t.classList.add('s');clearTimeout(toast.i);toast.i=setTimeout(()=>t.classList.remove('s'),1700)}
-function go(i){home=false;v=i;cur='';render()}
-function goHome(){home=true;cur='';render();scrollTo(0,0)}
+function go(i){home=false;arcv=false;v=i;cur='';render()}
+function goHome(){if(arch){backToday();return}home=true;arcv=false;cur='';render();scrollTo(0,0)}
+const cap=t=>t[0].toUpperCase()+t.slice(1),keyOf=t=>t.getFullYear()+'-'+(t.getMonth()+1)+'-'+t.getDate(),dateOf=k=>{const t=k.split('-').map(Number);return new Date(t[0],t[1]-1,t[2])};
+const readDay=k=>{try{return JSON.parse(localStorage.getItem(SK+':'+k))}catch(e){return null}};
+function pastDays(){const f=MAN.seasons[0].start.split('-').map(Number),a=new Date(f[0],f[1]-1,f[2]),o=[];for(let t=new Date(TODAYD.getFullYear(),TODAYD.getMonth(),TODAYD.getDate()-1);t>=a;t=new Date(t.getFullYear(),t.getMonth(),t.getDate()-1))o.push(t);return o}
+function openArchive(){arcv=true;home=false;render();scrollTo(0,0)}
+function switchDay(){D.clear();for(const q in P)delete P[q];v=0;cur='';load().then(boot)}
+function playDay(k){if(k===TODAYK){backToday();return}arch=true;arcv=false;home=false;d=dateOf(k);DK=k;switchDay()}
+function backToday(){arch=false;arcv=false;d=new Date(TODAYD);DK=TODAYK;home=true;switchDay()}
+function arcBar(){$('#ab').innerHTML=arch&&!home&&!arcv?`<div class="arcbar"><span>Archivo · ${cap(dateOf(DK).toLocaleDateString('es',{weekday:'long',day:'numeric',month:'long'}))}</span><button onclick="backToday()">Volver a hoy</button></div>`:''}
+function archiveView(){$('#nav').innerHTML='';const days=pastDays(),F=(t,o)=>t.toLocaleDateString('es',o);
+ let o=`<div class="ahead"><button class="tab ho" onclick="goHome()" aria-label="Inicio"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg></button><h2>Archivo</h2></div>`;
+ if(!days.length)o+=`<p class="msg">Aquí aparecerán los días anteriores. Mañana podrás volver a jugar el de hoy.</p>`;
+ else{const gr=[];days.forEach(t=>{const g=F(t,{month:'long',year:'numeric'});let x=gr[gr.length-1];if(!x||x.g!==g)gr.push(x={g,l:[]});x.l.push(t)});
+  o+=`<p class="msg">Todos los días desde el primero. Toca uno para jugarlo.</p>`+gr.map((g,gi)=>`<details ${gi==0?'open':''}><summary>${cap(g.g)}</summary>${g.l.map(t=>{const k=keyOf(t),st=readDay(k),ps=schedule(MAN,t),
+   mk=[0,1,2].map(i=>{const r=st&&st.r&&st.r[i];return r&&r.x==1?'<i class="m ok">✓</i>':r&&(r.f.length||r.x)?'<i class="m part">•</i>':'<i class="m">○</i>'}).join('');
+   return `<button class="ar" onclick="playDay('${k}')"><span class="ad">${cap(F(t,{weekday:'short',day:'numeric',month:'short'}))}</span><span class="ap">${ps.map(q=>q[0]+'·'+q[2]).join('  ')}</span><span class="am">${mk}</span></button>`}).join('')}</details>`).join('')}
+ $('#v').innerHTML=o}
 function soon(){toast('Próximamente')}
 function next(){const i=S.r.findIndex(r=>!r.x);go(i<0?3:i)}
 function nav(){$('#nav').innerHTML=`<button class="tab ho" onclick="goHome()" aria-label="Inicio"><svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 11l8-7 8 7"/><path d="M6 10v10h12V10"/></svg></button>`+picks.map((k,i)=>`<button class="tab ${v==i?'on':''} ${S.r[i].x?'done':''}" onclick="go(${i})">${k}<small class="${S.r[i].x==1?'ck':''}">${S.r[i].x==1?'✓':S.r[i].x?'cerrada':'Ronda '+(i+1)}</small></button>`).join('')+
@@ -168,7 +195,7 @@ function stats(){const rs=S.r,all=rs.flatMap(r=>r.f).map(n=>D.get(n)),n=tier(),W
  if(fin){const got=new Set(rs.flatMap(r=>r.f)),miss=picks.flatMap(k=>P[k].filter(x=>x.b!='r'&&!got.has(x.n))).sort((a,b)=>b.p-a.p).slice(0,6);
   if(miss.length)o+=`<h3>Palabras que se te escaparon</h3><div class="chips">${miss.map(x=>`<span class="chip">${x.w} · ${x.p}</span>`).join('')}</div>`}
  o+=`<h3>Tus palabras por ronda</h3>`+picks.map((k,i)=>`<details><summary style="display:flex;justify-content:space-between"><span>${rs[i].x==1?'⭐ ':''}${k}</span><span>${rs[i].f.length} palabras</span></summary><div class="chips">${chips(rs[i].f)||'<span class="msg">Sin palabras todavía</span>'}</div></details>`).join('');
- o+=`<p class="msg">Próximo puzle en <b id="cd"></b></p>`;$('#v').innerHTML=o;tick()}
+ o+=arch?`<button class="btn" onclick="backToday()">Volver a hoy</button>`:`<p class="msg">Próximo puzle en <b id="cd"></b></p>`;$('#v').innerHTML=o;tick()}
 function tick(){const e=$('#cd');if(!e)return;const n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1),s=Math.floor((m-n)/1000),p=x=>String(x).padStart(2,'0');e.textContent=p(s/3600|0)+':'+p(s/60%60|0)+':'+p(s%60)}
 setInterval(tick,1000);
 function share(){const t=`Pala y Bra ${DK}\n`+picks.map((k,i)=>`${k} ${S.r[i].x==1?'⭐':'▫️'} ${tot(i)} pts`).join('\n')+`\n${TIERS[tier()]}\nhttps://tiborio.github.io/pala-y-bra/`;
@@ -184,12 +211,12 @@ function homeView(){$('#nav').innerHTML='';
  <button class="btn" onclick="play()">${done?'Ver resultados de hoy':started?'Seguir el diario':'Jugar el diario'}</button>
  <p class="st">${c} de 3 rondas completadas</p></div>
  <div class="menu">
- <button class="tile" onclick="soon()">${ic('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/>')}Archivo<small>Días pasados</small><em>Pronto</em></button>
+ <button class="tile" onclick="openArchive()">${ic('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/>')}Archivo<small>Días pasados</small><em>${pastDays().length?pastDays().length+(pastDays().length>1?' días':' día'):'Desde mañana'}</em></button>
  <button class="tile" onclick="soon()">${ic('<path d="M5 20V10M12 20V4M19 20v-7"/>')}Estadísticas<small>Tu historial</small><em>Pronto</em></button>
  <button class="tile" onclick="soon()">${ic('<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>')}Cuenta<small>Tu perfil</small><em>Pronto</em></button></div>
  <div class="date">${dt}</div><button class="link" onclick="credits()">Créditos</button></div>`}
 function play(){home=false;if(S.r.every(r=>r.x))v=3;render()}
-function render(){if(home){homeView();return}nav();v==3?stats():game()}
+function render(){arcBar();if(arcv){archiveView();return}if(home){homeView();return}nav();v==3?stats():game()}
 function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
  if(w.length<4)m='Mínimo 4 letras';
  else if(w[0]!=k[0]||w[w.length-1]!=k[2])m=`Debe empezar con ${k[0]} y terminar con ${k[2]}`;
@@ -197,8 +224,8 @@ function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
  else if(!D.has(w))m='No está en el diccionario';
  if(m)return toast(m);
  r.f.push(w);cur='';toast('+'+D.get(w).p+' pts'+(D.get(w).r?' ✦':''));
- if(tot(v)>=GO(v)){r.x=1;save();render();setTimeout(()=>{if(!home&&S.r[v]===r&&v<3&&S.r.some(q=>!q.x))next()},1600)}else{save();render()}}
-function key(c){if(home){if(c=='ENTER')play();return}if(v>2||S.r[v].x)return;if(c=='ENTER')sub();else if(c=='BACK'){cur=cur.slice(0,-1);inp()}else if(cur.length<20){cur+=c;inp()}}
+ if(tot(v)>=GO(v)){r.x=1;save();render();setTimeout(()=>{if(!home&&!arcv&&S.r[v]===r&&v<3&&S.r.some(q=>!q.x))next()},1600)}else{save();render()}}
+function key(c){if(home||arcv){if(home&&c=='ENTER')play();return}if(v>2||S.r[v].x)return;if(c=='ENTER')sub();else if(c=='BACK'){cur=cur.slice(0,-1);inp()}else if(cur.length<20){cur+=c;inp()}}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)key(b.dataset.k)});
 addEventListener('keydown',e=>{if($('#m').classList.contains('open')||e.ctrlKey||e.metaKey||e.altKey)return;
  if(e.key=='Enter'){if(document.activeElement.tagName=='BUTTON')return;key('ENTER')}else if(e.key=='Backspace')key('BACK');else if(/^[a-zñáéíóúü]$/i.test(e.key))key(N(e.key))});
