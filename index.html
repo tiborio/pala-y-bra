@@ -74,20 +74,22 @@ let GOALS={},picks=[],S,v=0,cur='';
 const $=s=>document.querySelector(s);
 const N=s=>s.toUpperCase().replace(/Ñ/g,'#').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/#/g,'Ñ');
 const D=new Map(),P={},fn=k=>k.toLowerCase().replace(/ñ/g,'0');
-const d=new Date(),DK=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
+const Q=new URLSearchParams(location.search),TEST=Q.has('fecha')||Q.has('par'),SK=TEST?'pdl-test':'pdl';
+let d=new Date();if(Q.has('fecha')){const t=Q.get('fecha').split('-').map(Number);if(t.length==3&&t.every(Number.isFinite))d=new Date(t[0],t[1]-1,t[2])}
+const DK=d.getFullYear()+'-'+(d.getMonth()+1)+'-'+d.getDate();
 const dn=(y,m,x)=>Date.UTC(y,m-1,x)/864e5,hs=s=>{let h=2166136261;for(const c of s)h=Math.imul(h^c.charCodeAt(0),16777619)>>>0;return h};
 function perm(L,seed){let a=seed>>>0;const r=()=>{a=(a+0x6D2B79F5)>>>0;let t=a;t=Math.imul(t^t>>>15,t|1);t^=t+Math.imul(t^t>>>7,t|61);return((t^t>>>14)>>>0)/4294967296};const p=[...Array(L).keys()];for(let i=L-1;i>0;i--){const j=Math.floor(r()*(i+1));[p[i],p[j]]=[p[j],p[i]]}return p}
 function cyc(L,start,c){let q=perm(L,hs(start+':0'));for(let i=1;i<=c;i++){const bad=new Set(q.slice(-Math.floor(L/3)));q=perm(L,hs(start+':'+i));q=[...q.filter(x=>!bad.has(x)),...q.filter(x=>bad.has(x))]}return q}
 function schedule(m,date){const T=dn(date.getFullYear(),date.getMonth()+1,date.getDate());let se=m.seasons[0];for(const s of m.seasons)if(dn(...s.start.split('-').map(Number))<=T)se=s;
  const L=se.pairs.length,di=Math.max(0,T-dn(...se.start.split('-').map(Number)));
  return [0,1,2].map(r=>{const p=di*3+r;return se.pairs[cyc(L,se.start,Math.floor(p/L))[p%L]]})}
-async function load(){const m=await(await fetch('data/manifest.json')).json();GOALS=m.goals||{};picks=schedule(m,d);
+async function load(){const m=await(await fetch('data/manifest.json')).json();GOALS=m.goals||{};picks=schedule(m,d);if(Q.has('par'))Q.get('par').toUpperCase().split(',').slice(0,3).forEach((k,i)=>{if(/^[A-ZÑ]-[A-ZÑ]$/.test(k))picks[i]=k});
  const fs=await Promise.all(picks.map(async k=>(await fetch('data/'+fn(k)+'.json')).json()));
- fs.forEach(f=>{P[f.k]=[];for(const b of['c','m','r'])if(f[b])f[b].split(' ').forEach(x=>{const w=x.toUpperCase(),o={w,n:w,r:false,b,p:w.length-3,k:f.k};D.set(w,o);P[f.k].push(o)})})}
-const GO=i=>GOALS[picks[i]]||30,save=()=>{try{localStorage.setItem('pdl',JSON.stringify(S))}catch(e){}};
+ fs.forEach(f=>{P[f.k]=[];const U=new Set(f.u?f.u.toUpperCase().split(' '):[]);for(const b of['c','m','r'])if(f[b])f[b].split(' ').forEach(x=>{const w=x.toUpperCase(),R=b=='r'&&!U.has(w),o={w,n:w,r:R,b,p:(w.length-3)*(R?2:1),k:f.k};D.set(w,o);P[f.k].push(o)})})}
+const GO=i=>GOALS[picks[i]]||30,save=()=>{try{localStorage.setItem(SK,JSON.stringify(S))}catch(e){}};
 const tot=i=>S.r[i].f.reduce((a,n)=>a+D.get(n).p,0);
-function boot(){try{S=JSON.parse(localStorage.getItem('pdl'))}catch(e){}
- if(!S||S.d!==DK)S={d:DK,r:picks.map(()=>({f:[],x:0}))};
+function boot(){try{S=JSON.parse(localStorage.getItem(SK))}catch(e){}
+ if(!S||S.d!==DK||(TEST&&S.t!==picks.join()))S={d:DK,t:picks.join(),r:picks.map(()=>({f:[],x:0}))};
  v=S.r.every(r=>r.x)?3:Math.max(0,S.r.findIndex(r=>!r.x));render()}
 const TIERS=['Aprendiz','Buen comienzo','¡Genial!','¡Perfeccionista!'];
 const tier=()=>S.r.filter(r=>r.x==1).length;

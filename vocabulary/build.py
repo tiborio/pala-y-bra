@@ -43,6 +43,28 @@ for p in _loadw('permitir.txt'): PERM|=_forms(p)
 EXC-=PERM                                            # ordinary words wrongly flagged
 print('excluded as proper noun/demonym:',len(EXC))
 allw={w for w in words|add if ok(w) and w not in BLOCK and w.rstrip('s') not in BLOCK and w not in EXC}
+# --- rarity: judged by the word's FAMILY (base word + all its inflected forms), not by the exact form typed ---
+lem={}
+if os.path.exists('lemas.txt'):
+    for l in open('lemas.txt',encoding='utf-8'):
+        a=l.split()
+        if len(a)==2: lem[a[0]]=a[1]
+def root(w):
+    for _ in range(4):
+        if w in lem and lem[w]!=w: w=lem[w]
+        else: break
+    return w
+fam=collections.Counter()
+for w,c in cnt.items(): fam[root(w)]+=c
+RARE_BELOW=1       # a word is rare (2x points) when its family has no word in the 50k frequency list
+def famscore(w):
+    sc=fam.get(root(w),0)
+    if w.endswith('mente') and len(w)>7:        # adverbs in -mente follow their adjective (fabulosamente -> fabuloso)
+        b=w[:-5]
+        for c in {b,b[:-1]+'o' if b.endswith('a') else b}: sc=max(sc,fam.get(root(c),0))
+    return sc
+rare=lambda w:famscore(w)<RARE_BELOW
+print('lemma links loaded:',len(lem))
 band=lambda w:'c' if rank.get(w,10**9)<10000 else 'm' if w in rank else 'r'
 fn=lambda k:k.lower().replace('ñ','0')
 pairs=collections.defaultdict(list)
@@ -59,7 +81,8 @@ size=0
 for k in keep:
     g={'c':[],'m':[],'r':[]}
     for w in sorted(pairs[k]): g[band(w)].append(w)
-    s=json.dumps({'k':k,**{b:' '.join(v) for b,v in g.items()}},ensure_ascii=False,separators=(',',':'))
+    u=[w for w in g['r'] if not rare(w)]     # long-tail words from a common family: valid, but NOT double points
+    s=json.dumps({'k':k,**{b:' '.join(v) for b,v in g.items()},'u':' '.join(u)},ensure_ascii=False,separators=(',',':'))
     open(f'data/{fn(k)}.json','w',encoding='utf-8').write(s);size+=len(s.encode())
 import math
 def goal(ws):
