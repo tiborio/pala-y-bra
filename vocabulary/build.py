@@ -97,6 +97,15 @@ start=sys.argv[1] if len(sys.argv)>1 else '2026-11-04'
 if os.path.exists('seasons.json'): seasons=json.load(open('seasons.json'))
 else: seasons=[{'start':start,'pairs':keep}];json.dump(seasons,open('seasons.json','w'))
 json.dump({'goal':GOAL,'goals':GOALS,'seasons':seasons},open('data/manifest.json','w'))
+# --- vetadas.json: banned words by kind, so the game can say WHY a word is refused instead of "not in dictionary"
+_G=_load('excluir_cat.txt')|_load('mixtas_cat.txt')
+for b in _loadw('excluir_extra.txt'):
+    _G|=_expand(unicodedata.normalize('NFD',b.replace('ñ','#')).encode('ascii','ignore').decode().replace('#','ñ'))
+_X=_load('excluir.txt')
+_G={w for w in _G if ok(w) and w not in PERM}
+_X={w for w in _X if ok(w) and w not in PERM and w not in _G}
+json.dump({'g':' '.join(sorted(_G)),'x':' '.join(sorted(_X))},open('data/vetadas.json','w',encoding='utf-8'),ensure_ascii=False,separators=(',',':'))
+print('vetadas: gentilicios',len(_G),'| nombres propios y otros',len(_X))
 print('allowed words:',len(allw),'| eligible pairs:',len(keep),'| data size KB:',size//1024,'| largest file KB:',max(os.path.getsize('data/'+f) for f in os.listdir('data'))//1024)
 print('days before any repeat:',len(keep)//3)
 print('goals:',{k:GOALS[k] for k in ['S-A','T-O','J-O','C-I','C-A','V-R'] if k in GOALS})
