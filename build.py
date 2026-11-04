@@ -4,7 +4,8 @@ Usage: python build.py [season_start YYYY-MM-DD]   (re-run any time to regenerat
 import re,json,sys,os,unicodedata,collections
 MIN_COMMON=25     # pair needs this many words found in the 50k frequency list
 MAX_TOTAL=10**9   # optional cap on pair size
-GOAL=30
+GOAL=30            # fallback
+GMIN,GMAX,GW=20,72,5   # goal = (words a native should find) x (avg points per word); words = GW*log10(effective pool size)
 BLOCK=set("puta puto putas putos mierda coño joder cabron cabrona pendejo pendeja verga marica maricon mamon chingar zorra".split())
 def N(s):
     s=unicodedata.normalize('NFD',s.replace('ñ','#'))
@@ -37,10 +38,19 @@ for k in keep:
     for w in sorted(pairs[k]): g[band(w)].append(w)
     s=json.dumps({'k':k,**{b:' '.join(v) for b,v in g.items()}},ensure_ascii=False,separators=(',',':'))
     open(f'data/{fn(k)}.json','w',encoding='utf-8').write(s);size+=len(s.encode())
+import math
+def goal(ws):
+    c=[w for w in ws if band(w)=='c'];m=[w for w in ws if band(w)=='m'];r=len(ws)-len(c)-len(m)
+    cm=c+m;avg=sum(len(w)-3 for w in cm)/len(cm)
+    pool=len(c)+0.5*len(m)+0.05*r          # common words count fully, known words half, long-tail words a little
+    return max(GMIN,min(GMAX,4*round(GW*math.log10(pool)*avg/4)))
+GOALS={k:goal(pairs[k]) for k in keep}
 start=sys.argv[1] if len(sys.argv)>1 else '2026-11-04'
 if os.path.exists('seasons.json'): seasons=json.load(open('seasons.json'))
 else: seasons=[{'start':start,'pairs':keep}];json.dump(seasons,open('seasons.json','w'))
-json.dump({'goal':GOAL,'seasons':seasons},open('data/manifest.json','w'))
+json.dump({'goal':GOAL,'goals':GOALS,'seasons':seasons},open('data/manifest.json','w'))
 print('allowed words:',len(allw),'| eligible pairs:',len(keep),'| data size KB:',size//1024,'| largest file KB:',max(os.path.getsize('data/'+f) for f in os.listdir('data'))//1024)
 print('days before any repeat:',len(keep)//3)
-print('sample pairs:',keep[:20])
+import statistics as st;v=sorted(GOALS.values());print('goal min/median/max:',v[0],st.median(v),v[-1]);print('goal histogram:',sorted(collections.Counter(v).items()))
+print('examples:',{k:GOALS[k] for k in ['S-A','T-O','V-A','J-O','H-O','V-R','C-A','A-N','C-I','J-E','Q-N'] if k in GOALS})
+print('lowest 8:',sorted(GOALS.items(),key=lambda x:x[1])[:8])

@@ -70,7 +70,7 @@ h2{margin:6px 0;font-size:34px;color:var(--br)}
 <div id="t" role="status"></div>
 <div id="m" role="dialog" aria-modal="true"><div id="mc"></div></div>
 <script>
-let GOAL=30,picks=[],S,v=0,cur='';
+let GOALS={},picks=[],S,v=0,cur='';
 const $=s=>document.querySelector(s);
 const N=s=>s.toUpperCase().replace(/Ñ/g,'#').normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/#/g,'Ñ');
 const D=new Map(),P={},fn=k=>k.toLowerCase().replace(/ñ/g,'0');
@@ -81,10 +81,10 @@ function cyc(L,start,c){let q=perm(L,hs(start+':0'));for(let i=1;i<=c;i++){const
 function schedule(m,date){const T=dn(date.getFullYear(),date.getMonth()+1,date.getDate());let se=m.seasons[0];for(const s of m.seasons)if(dn(...s.start.split('-').map(Number))<=T)se=s;
  const L=se.pairs.length,di=Math.max(0,T-dn(...se.start.split('-').map(Number)));
  return [0,1,2].map(r=>{const p=di*3+r;return se.pairs[cyc(L,se.start,Math.floor(p/L))[p%L]]})}
-async function load(){const m=await(await fetch('data/manifest.json')).json();GOAL=m.goal;picks=schedule(m,d);
+async function load(){const m=await(await fetch('data/manifest.json')).json();GOALS=m.goals||{};picks=schedule(m,d);
  const fs=await Promise.all(picks.map(async k=>(await fetch('data/'+fn(k)+'.json')).json()));
  fs.forEach(f=>{P[f.k]=[];for(const b of['c','m','r'])if(f[b])f[b].split(' ').forEach(x=>{const w=x.toUpperCase(),o={w,n:w,r:false,b,p:w.length-3,k:f.k};D.set(w,o);P[f.k].push(o)})})}
-const save=()=>{try{localStorage.setItem('pdl',JSON.stringify(S))}catch(e){}};
+const GO=i=>GOALS[picks[i]]||30,save=()=>{try{localStorage.setItem('pdl',JSON.stringify(S))}catch(e){}};
 const tot=i=>S.r[i].f.reduce((a,n)=>a+D.get(n).p,0);
 function boot(){try{S=JSON.parse(localStorage.getItem('pdl'))}catch(e){}
  if(!S||S.d!==DK)S={d:DK,r:picks.map(()=>({f:[],x:0}))};
@@ -98,8 +98,8 @@ function nav(){$('#nav').innerHTML=picks.map((k,i)=>`<button class="tab ${v==i?'
  `<button class="tab ${v==3?'on':''}" onclick="go(3)">Stats<small>Resumen</small></button><button class="tab" onclick="rules(0)">?<small>Reglas</small></button>`}
 function chips(f){return f.map(n=>{const o=D.get(n);return `<span class="chip ${o.r?'r':''}">${o.w}${o.r?' ✦':''}</span>`}).join('')}
 function inp(){const e=$('#inp');if(!e)return;if(!cur){e.className='ph';e.textContent='ESCRIBE UNA PALABRA…'}else{e.className='';e.innerHTML='<b>'+cur[0]+'</b>'+cur.slice(1)}}
-function game(){const i=v,k=picks[i],r=S.r[i],t=Math.min(tot(i),GOAL);
- let o=`<div class="pair"><span>${k[0]}</span><i class="arch"></i><span>${k[2]}</span></div><div class="pill">${t} / ${GOAL} pts</div><div class="bar"><i style="width:${t/GOAL*100}%"></i></div>`;
+function game(){const i=v,k=picks[i],r=S.r[i],g=GO(i),t=Math.min(tot(i),g);
+ let o=`<div class="pair"><span>${k[0]}</span><i class="arch"></i><span>${k[2]}</span></div><div class="pill">${t} / ${g} pts</div><div class="bar"><i style="width:${t/g*100}%"></i></div>`;
  if(!r.x){o+=`<div id="inp"></div>`}
  else{o+=`<p class="msg">${r.x==1?'¡Ronda completada!':'Ronda cerrada. Palabras que pudiste jugar:'}</p>`;
   if(r.x==2){const m=P[k].filter(x=>!r.f.includes(x.n)&&x.b!='r').sort((a,b)=>b.p-a.p).slice(0,3);o+=`<div class="chips">${m.map(x=>`<span class="chip ${x.r?'r':''}">${x.w} · ${x.p}</span>`).join('')}</div>`}
@@ -112,7 +112,7 @@ function stats(){const all=S.r.flatMap(r=>r.f).map(n=>D.get(n)),n=tier();
  let o=`<h2>${TIERS[n]}</h2><div class="seg">${S.r.map(r=>`<i class="${r.x==1?'on':''}"></i>`).join('')}</div>
  <h3>Tus destacadas</h3><div class="hl"><div><small>Más larga</small>${lg?lg.w:'—'}</div><div><small>Más valiosa</small>${bs?bs.w:'—'}</div><div><small>Más rara ✦</small>${ra?ra.w:'—'}</div></div>
  <button class="btn" onclick="share()">Compartir resultados</button><h3>Resumen por ronda</h3>`;
- o+=picks.map((k,i)=>`<details><summary style="display:flex;justify-content:space-between"><span>${S.r[i].x==1?'⭐ ':''}${k}</span><span>${tot(i)} / ${GOAL} pts · ${S.r[i].f.length} palabras</span></summary><div class="chips">${chips(S.r[i].f)}</div></details>`).join('');
+ o+=picks.map((k,i)=>`<details><summary style="display:flex;justify-content:space-between"><span>${S.r[i].x==1?'⭐ ':''}${k}</span><span>${tot(i)} / ${GO(i)} pts · ${S.r[i].f.length} palabras</span></summary><div class="chips">${chips(S.r[i].f)}</div></details>`).join('');
  o+=`<p class="msg">Próximo puzle en <b id="cd"></b></p>`;$('#v').innerHTML=o;tick()}
 function tick(){const e=$('#cd');if(!e)return;const n=new Date(),m=new Date(n.getFullYear(),n.getMonth(),n.getDate()+1),s=Math.floor((m-n)/1000),p=x=>String(x).padStart(2,'0');e.textContent=p(s/3600|0)+':'+p(s/60%60|0)+':'+p(s%60)}
 setInterval(tick,1000);
@@ -127,7 +127,7 @@ function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
  else if(!D.has(w))m='No está en el diccionario';
  if(m)return toast(m);
  r.f.push(w);cur='';toast('+'+D.get(w).p+' pts'+(D.get(w).r?' ✦':''));
- if(tot(v)>=GOAL){r.x=1;save();render();setTimeout(()=>{if(S.r[v]===r&&v<3)next()},1600)}else{save();render()}}
+ if(tot(v)>=GO(v)){r.x=1;save();render();setTimeout(()=>{if(S.r[v]===r&&v<3)next()},1600)}else{save();render()}}
 function key(c){if(v>2||S.r[v].x)return;if(c=='ENTER')sub();else if(c=='BACK'){cur=cur.slice(0,-1);inp()}else if(cur.length<20){cur+=c;inp()}}
 document.addEventListener('click',e=>{const b=e.target.closest('[data-k]');if(b)key(b.dataset.k)});
 addEventListener('keydown',e=>{if($('#m').classList.contains('open')||e.ctrlKey||e.metaKey||e.altKey)return;
