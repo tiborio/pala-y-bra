@@ -89,7 +89,9 @@ h2{margin:6px 0;font-size:34px;color:var(--br)}
 #t.s{opacity:1}
 #m{position:fixed;inset:0;background:rgba(10,14,25,.6);display:none;align-items:center;justify-content:center;padding:16px}
 #m.open{display:flex}
-#m>div{background:var(--bg);border-radius:18px;width:100%;max-width:400px;padding:26px 22px 20px;position:relative;min-height:300px;display:flex;flex-direction:column}
+#m>div{background:var(--bg);border-radius:18px;width:100%;max-width:400px;padding:26px 22px 20px;position:relative;min-height:300px;max-height:100%;overflow:auto;display:flex;flex-direction:column}
+#m .cr p{font-size:15px;margin:0 0 12px;text-align:left}
+#m .cr a{color:var(--br);font-weight:700}
 #m h3{font-size:26px;margin:14px 0 8px;color:var(--br)}
 #m p{margin:0;font-size:17px}
 .x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:1px solid var(--ln);background:var(--sf)}
@@ -185,7 +187,7 @@ function homeView(){$('#nav').innerHTML='';
  <button class="tile" onclick="soon()">${ic('<rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4M16 3v4M4 10h16"/>')}Archivo<small>Días pasados</small><em>Pronto</em></button>
  <button class="tile" onclick="soon()">${ic('<path d="M5 20V10M12 20V4M19 20v-7"/>')}Estadísticas<small>Tu historial</small><em>Pronto</em></button>
  <button class="tile" onclick="soon()">${ic('<circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/>')}Cuenta<small>Tu perfil</small><em>Pronto</em></button></div>
- <div class="date">${dt}</div></div>`}
+ <div class="date">${dt}</div><button class="link" onclick="credits()">Créditos</button></div>`}
 function play(){home=false;if(S.r.every(r=>r.x))v=3;render()}
 function render(){if(home){homeView();return}nav();v==3?stats():game()}
 function sub(){const r=S.r[v],k=picks[v],w=cur;let m='';
@@ -205,6 +207,13 @@ const RL=[['Une las letras','Cada palabra debe empezar y terminar con las letras
 ['Sin nombres propios','No valen nombres propios ni gentilicios de países, ciudades o regiones, como «danés» o «parisino». Sí valen las palabras con otro significado, como «gato» o «canario».'],
 ['Sube a Perfeccionista','Alcanza la meta en las 3 rondas para llegar al nivel más alto.'],
 ['¿Atascado? Ríndete','Cierra la ronda para asegurar tus puntos y ver palabras que podías jugar.']];
+function credits(){const m=$('#m');m.classList.add('open');
+ $('#mc').innerHTML=`<button class="x" aria-label="Cerrar" onclick="$('#m').classList.remove('open')">✕</button><div class="cr"><h3>Créditos</h3>
+ <p><b>Palabras.</b> <a href="https://github.com/words/an-array-of-spanish-words" target="_blank" rel="noopener">an-array-of-spanish-words</a>, lista derivada de la de Letterpress.</p>
+ <p><b>Frecuencia de uso.</b> <a href="https://github.com/hermitdave/FrequencyWords" target="_blank" rel="noopener">FrequencyWords</a> de Hermit Dave, basada en subtítulos de OpenSubtitles, bajo licencia <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>.</p>
+ <p><b>Nombres propios, gentilicios y formas verbales.</b> Datos de Wiktionary (<a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank" rel="noopener">CC BY-SA 4.0</a>) extraídos con Wiktextract, de Tatu Ylonen, vía <a href="https://kaikki.org" target="_blank" rel="noopener">kaikki.org</a>.</p>
+ <p>Los datos de palabras de este juego se comparten bajo la misma licencia, CC BY-SA 4.0.</p></div>
+ <div class="nv"><span></span><button onclick="$('#m').classList.remove('open')">Cerrar</button></div>`}
 function rules(i){const m=$('#m');m.classList.add('open');
  $('#mc').innerHTML=`<button class="x" aria-label="Cerrar" onclick="$('#m').classList.remove('open')">✕</button><h3>${RL[i][0]}</h3><p>${RL[i][1]}</p>
  <div class="nv">${i?`<button aria-label="Anterior" onclick="rules(${i-1})">←</button>`:'<span></span>'}<span class="dots">${RL.map((_,j)=>`<i class="${j==i?'on':''}"></i>`).join('')}</span>${i<RL.length-1?`<button aria-label="Siguiente" onclick="rules(${i+1})">→</button>`:`<button onclick="$('#m').classList.remove('open')">${home?'Entendido':'Jugar'}</button>`}</div>`}
