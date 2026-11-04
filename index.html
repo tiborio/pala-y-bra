@@ -255,7 +255,7 @@ function nav(){const T=S.r.reduce((a,r,i)=>a+tot(i),0);
 function chips(f){return f.map(n=>{const o=D.get(n);return `<span class="chip ${o.r?'r':''}">${o.w}${o.r?' ✦':''}</span>`}).join('')}
 let missW='';
 // Reportes de palabras: pega aquí los datos de tu Google Form (ver instrucciones). Vacío = solo copia la palabra.
-const REPORT_FORM={url:'',word:'',pair:''};
+const REPORT_FORM={url:'https://docs.google.com/forms/d/e/1FAIpQLSdyeX72aUkyFsnVuXO0yHUyt5etf0fvaef_pwZuAJ4VAyzJfw/formResponse',word:'entry.909120329',pair:'entry.2029641671'};
 function report(w){const F=REPORT_FORM,key='pdl-rep',done=(()=>{try{return JSON.parse(localStorage.getItem(key))||[]}catch(e){return[]}})();
  try{navigator.clipboard.writeText(w).catch(()=>{})}catch(e){}
  if(!F.url){toast('Palabra copiada');return}
