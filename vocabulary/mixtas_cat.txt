@@ -1,0 +1,368 @@
+abajino	DEM: someone from the north of Chile	OTRO: from, of or relating to the north of Chile
+abisinio	DEM: Abyssinian cat (can be lowercase or capitalized)	OTRO: Abyssinian | Abyssinian
+abjasio	DEM: Abkhaz (language)	OTRO: Abkhaz, Abkhazian | Abkhaz person
+acateco	DEM: Akatek	OTRO: Akatek
+achenes	DEM: Acehnese	OTRO: Acehnese
+adigues	DEM: Adygean (of, from or relating to Adygea, Russia) | Adygean (native or inhabitant of Adygea, Russia) (usually male)	OTRO: Adyghe (of or relating to Adyghe ethnic group) | Adyghe (member of the Adyghe ethic group)
+alano	DEM: Alan (a member of a group of Sarmatian tribes)	OTRO: Alanic | mastiff, wolfhound
+albanes	DEM: Albanian (of, from or relating to Albania) | Albanian (native or inhabitant of Albania)	OTRO: Albanian (language)
+albano	DEM: Alban (of, from or relating to the city of Alba Longa) | Alban (native or inhabitant of the city of Alba Longa)	OTRO: synonym of albanés (“Albanian”) | synonym of albanés (“Albanian”)
+albigense	DEM: Albigensian	OTRO: Albigense
+alejandrino	DEM: Alexandrian, Alexandrine (of, from or relating to the city of Alexandr | Alexandrian, Alexandrine (native or inhabitant of the city of Alexandr	OTRO: Alexandrian (of or relating to Alexander the Great) | Alexandrian
+aleman	DEM: German (of, from or relating to Germany) | German (native or inhabitant of Germany) (usually male)	OTRO: German (relating to the German language) | German (language)
+alexandrino	DEM: Alexandrian (of, from or relating to the city of Alexandria, Alexandri	OTRO: alexandrine
+algueres	DEM: Algherese (of, from or relating to the city of Alghero, province of Sa | Algherese (native or inhabitant of the city of Alghero, province of Sa	OTRO: Algherese (Catalan dialect)
+alteño	DEM: native or inhabitant of El Alto (usually male)	OTRO: someone from El Alto, Bolivia
+altoaragones	DEM: High Aragon	OTRO: Aragonese (language)
+amazonense	DEM: Amazonian | Amazonian	OTRO: born, native or original from the Amazonas of Peru, Brazil, Colombia a
+americano	DEM: American (of, from or relating to the Americas) | American, US-American (of, from or relating to the United States)	OTRO: someone who became rich in the Americas and returned to his country | person born and/or raised in Spanish America who immigrated or visited
+amonita	DEM: Ammonite (native or inhabitant of Ammon)	OTRO: Ammonite | ammonite (explosive prepared from ammonium nitrate)
+amsterdames	DEM: Amsterdamer	OTRO: Amsterdamer (an inhabitant or a resident of Amsterdam)
+andaluz	DEM: Andalusian (of, from or relating to Andalusia, Spain) | Andalusian (native or inhabitant of Andalusia, Spain) (usually male)	OTRO: Andalusian dialect
+angelino	DEM: of, from or relating to Los Angeles	OTRO: Angelino, Angeleno (person from Los Angeles)
+anglosajon	DEM: Anglo-Saxon; Old English (language)	OTRO: Anglo-Saxon | Anglo-Saxon (person)
+aragones	DEM: Aragonese (language)	OTRO: Aragonese
+arameo	DEM: Aramaic (language)	OTRO: Aramean | Aramean
+araucano	DEM: of, from or relating to the city of Arauca or surrounding Arauca depar | native or inhabitant of the city of Arauca or surrounding Arauca depar	OTRO: Araucanian (Mapuche) | Mapudungun
+argentino	DEM: Argentinian, Argentine	OTRO: silver, silvery | Argentinian (person)
+argivo	DEM: Argive (person from Argos)	OTRO: Argos; Argive (of, from or relating to Argos)
+armenio	DEM: Armenian (of, from, or relating to Armenia, Armenians, the language or	OTRO: Armenian (person) | Armenian (language)
+asames	DEM: Assamese (language)	OTRO: Assamese | Assamese (someone from Assam)
+asiatico	DEM: Asian (person from or descended from people from the Asian continent)	OTRO: Asian
+asturiano	DEM: Asturian (of, from or relating to the autonomous community of Asturias | Asturian (native or inhabitant of the autonomous community of Asturias	OTRO: Asturian (language)
+atico	DEM: Attic (of, from or relating to the region of Attica, Greece) | native or inhabitant of the region of Attica, Greece (usually male)	OTRO: penthouse, loft, attic | Attic (Ancient Greek dialect spoken in Attica)
+atlante	DEM: Atlantean (of, from or relating to Atlantis (legendary sunken island)) | Atlantean (native or inhabitant of Atlantis (legendary sunken island))	OTRO: atlas (figure of a man used as a column)
+australiano	DEM: Australian (person)	OTRO: Australian
+austriaco	DEM: Austrian (Austrian person)	OTRO: Austrian (relating to Austria)
+avileño	DEM: of, from or relating to the city of Ciego de Ávila, Ciego de Ávila Pro | native or inhabitant of the city of Ciego de Ávila, Ciego de Ávila Pro	OTRO: danewort, Sambucus ebulus
+azerbaiyano	DEM: Azerbaijani (person)	OTRO: Azerbaijani (pertaining to Azerbaijan)
+azeri	DEM: Azeri (language)	OTRO: Azeri (of or relating to the Azeri people) | ethnic Azeri; Azerbaijani
+bagdadi	DEM: Baghdadi (native or inhabitant of the city of Baghdad, capital of Iraq	OTRO: Baghdadi
+baltico	DEM: Baltic	OTRO: Balt
+bandanes	DEM: Bandanese	OTRO: Bandanese
+barbastrense	DEM: synonym of barbastrino	OTRO: synonym of barbastrino
+barquense	DEM: native or inhabitant of La Barca Municipality | native or inhabitant of O Barco de Valdeorras	OTRO: of or from La Barca Municipality | of or from O Barco de Valdeorras
+batangueño	DEM: Batangueño (of, from or relating to Batangas) | Batangueño (native or inhabitant of Batangas) (usually male)	OTRO: the Tagalog dialect spoken in Batangas
+bavaro	DEM: Bavarian	OTRO: Bavarian person
+belga	DEM: Belgian	OTRO: Belgian (pertaining to Belgium) | Belgian (from or native to Belgium)
+beliceño	DEM: Belizean (person)	OTRO: Belizean (pertaining to Belize)
+benasques	DEM: Benasquese (dialect) | Benasquese (person)	OTRO: Benasquese
+bengali	DEM: Bengali (language)	OTRO: Bengali | Bengali (person)
+berlines	DEM: of, from or relating to the city of Berlin, capital of Germany	OTRO: Berliner
+bermudeño	DEM: Bermudian	OTRO: Bermudian
+berroqueño	DEM: of, from or relating to the village of Barruecopardo, province of Sala | of, from or relating to El Berrueco, Madrid	OTRO: granitic
+bielorruso	DEM: Belarusian (language)	OTRO: Belarusian (pertaining to Belarus) | Belarusian (person)
+bimbache	DEM: Bimbache (of, from or relating to the Paleohispanic inhabitants of El 	OTRO: Bimbache
+birmano	DEM: Burmese (language)	OTRO: Burmese (pertaining to Burma or its contemporary name, Myanmar) | Burmese (person)
+bohemio	DEM: Bohemian (of, from or relating to the region of Bohemia, Czech Republi | Bohemian (native or inhabitant of the region of Bohemia, Czech Republi	OTRO: bohemian (unconventional in behavior, appearance or style) | bohemian (a nonconformist artist or writer who lives an unconventional
+boliviano	DEM: boliviano (monetary unit)	OTRO: Bolivian | Bolivian
+bosnioherzegovino	DEM: native or inhabitant of Bosnia and Herzegovina (usually male)	OTRO: pertaining to Bosnia and Herzegovina
+botsuano	DEM: Motswana, Botswanan (person)	OTRO: of Botswana; Botswanan (of, from or pertaining to Botswana)
+brandeburgues	DEM: of, from or relating to the state of Brandenburg, Germany	OTRO: Brandenburger; someone from Brandenburg
+brasilero	DEM: Brazilian (person from Brazil)	OTRO: Brazilian
+brasileño	DEM: Brazilian (native or inhabitant of Brazil) (usually male)	OTRO: Brazilian
+bulaqueño	DEM: Bulaqueño (of, from or relating to Bulacan)	OTRO: Bulaqueño
+bulgaro	DEM: Bulgarian (language)	OTRO: Bulgarian (from or native to Bulgaria) | Bulgarian (pertaining to Bulgaria)
+burgundio	DEM: Burgundian (language)	OTRO: Burgundian | Burgundian (person)
+cabreires	DEM: of, from or relating to Cabreira | native or inhabitant of Cabreira (usually male)	OTRO: a dialect of Asturleonese spoken in and around Cabreira
+cachanilla	DEM: of, from or relating to the city of Mexicali, Baja California, Mexico | native or inhabitant of the city of Mexicali, Baja California, Mexico	OTRO: arrowweed, Pluchea sericea
+cachemir	DEM: Kashmiri (language)	OTRO: cashmere | Kashmiri
+calandino	DEM: of, from or relating to Calanda, Spain | native or inhabitant of Calanda, Spain (usually male)	OTRO: a species of fish, Squalius alburnoides
+calañes	DEM: of, from or relating to Calañas | native or inhabitant of Calañas (usually male)	OTRO: a type of hat with an upturned brim
+camboyano	DEM: Khmer (the national language of Cambodia)	OTRO: Cambodian | Cambodian (person)
+campechano	DEM: of, from or relating to the state of Campeche, Mexico | native or inhabitant of the state of Campeche, Mexico (usually male)	OTRO: kindly; cordial; affable | generous
+canario	DEM: of, from or relating to the Canary Islands, Spain | native or inhabitant of the Canary Islands, Spain (usually male)	OTRO: canary (bird)
+cantabro	DEM: Cantabrian (of, from or relating to Cantabria (modern-day region of Sp | Cantabrian (native or inhabitant of Cantabria (modern-day region of Sp	OTRO: Cantabri (the pre-Roman people) | Cantabri (the pre-Roman people)
+cantones	DEM: Cantonese (language)	OTRO: Cantonese | Cantonese (person)
+capitalino	DEM: of, from or relating to Mexico City | of, from or relating to Panama City	OTRO: capital city | someone from or related to a capital city
+carelio	DEM: Karelian (language)	OTRO: Karelian | Karelian
+carioca	DEM: Carioca (of, from or relating to the city of Rio de Janeiro, Rio de Ja | Carioca (native or inhabitant of the city of Rio de Janeiro, Rio de Ja	OTRO: of Brazil; Brazilian | a Brazilian
+carolino	DEM: of, from or relating to San Carlos | native or inhabitant of San Carlos (usually male)	OTRO: of the Real Convictorio de San Carlos (a school in Lima) | of the Glorioso Colegio Nacional de San Carlos (a school in Puno, Peru
+castellano	DEM: Castilian (of, from or relating to the geographic region or former kin | Spanish (of or related to Spain, particularly the Castilian or Europea	OTRO: Of a hue of marbleized black and white. | A color of marbleized black and white, specifically associated with ce
+catalan	DEM: Catalan, Catalonian (of, from or relating to Catalonia) | Catalan, Catalonian (native or inhabitant of Catalonia) (usually male)	OTRO: Catalan (language)
+caucasico	DEM: Caucasian (of, from or relating to the Caucasus (region on the border  | Caucasian (native or inhabitant of the Caucasus) (usually male)	OTRO: Caucasian (of a racial classification; pertaining to people originatin
+caviteño	DEM: Chavacano dialect spoken in Cavite	OTRO: Caviteño | Caviteño
+celta	DEM: Celt	OTRO: Celtic
+cenaguero	DEM: someone from a swamp; swamp dweller	OTRO: swamp; swamp-dwelling
+chalaca	DEM: bicycle kick	OTRO: a type of straw hat
+charro	DEM: of, from or relating to the city of Salamanca or surrounding province, | native or inhabitant of the city of Salamanca or surrounding province,	OTRO: coarse, vulgar | rustic
+checheno	DEM: Chechen (language)	OTRO: Chechen | Chechen (person)
+checo	DEM: first-person singular present indicative of checar	OTRO: Czech | Czechoslovakian
+checoslovaco	DEM: Czechoslovakian (person from Czechoslovakia)	OTRO: Czechoslovakian (of, from or relating to Czechoslovakia)
+cheyenes	DEM: Cheyenneite (of, from or relating to the city of Cheyenne, Wyoming, Un | Cheyenneite (native or inhabitant of the city of Cheyenne, Wyoming, Un	OTRO: Cheyenne (of or relating to the indigenous Cheyenne people) | Cheyenne (a member or descendant of the indigenous Cheyenne people)
+chihuahueño	DEM: Chihuahuan (native or inhabitant of Chihuahua) (usually male)	OTRO: Chihuahuan | Chihuahua (the breed of dog or an individual Chihuahua of this breed)
+chileno	DEM: Chilean	OTRO: Chilean
+chilote	DEM: of, from or relating to Chiloé (island in southern Chile) or the Chilo | native or inhabitant of Chiloé (island in southern Chile) or the Chilo	OTRO: a Chilean
+chino	DEM: a Chinese-run establishment; (US) variety store, dollar store, dime st	OTRO: Chinese | Chinese person
+choapino	DEM: of, from or relating to Choapa | native or inhabitant of Choapa (usually male)	OTRO: a small carpet
+chorrillana	DEM: female equivalent of chorrillano; female native or inhabitant of the d	OTRO: Mexican seafood dish with tomatoes, fish, and vegetables | Chilean dish consisting of a bed of French fries topped with sauteed b
+chuchequero	DEM: of, from or relating to Puntarenas, Costa Rica | native or inhabitant of Puntarenas, Costa Rica (usually male)	OTRO: clammer (someone who catches clams of the type Anadara tuberculosa)
+cingales	DEM: Sri Lankan (of, from or relating to Sri Lanka) | Sri Lankan (native or inhabitant of Sri Lanka) (usually male)	OTRO: Sinhalese (of the language, ethnicity, person) | Sinhalese (person)
+conectiques	DEM: Connecticuter (of, from or relating to the state of Connecticut, Unite	OTRO: Connecticuter
+congoleño	DEM: Congolese (either those from the DRC or the RoC)	OTRO: Congolese (relating to either the Democratic Republic of the Congo or 
+corcireo	DEM: Korkyraean	OTRO: Korkyraean
+cordillerano	DEM: of, from or relating to Cordillera Province, Paraguay | native or inhabitant of Cordillera Province, Paraguay (usually male)	OTRO: from a mountain range
+coreano	DEM: Korean (native or inhabitant of Korea) (usually male)	OTRO: Korean (relating to the Korean Peninsula) | Korean (language)
+corso	DEM: Corsican	OTRO: Corsican (person) | privateering
+croata	DEM: Croatian (language variety of the Serbo-Croatian language)	OTRO: Croatian (relating to Croatia) | Croatian (person)
+curazoleño	DEM: Curaçaoan (native or inhabitant)	OTRO: Curaçaoan
+curo	DEM: of, from or relating to Courland | native or inhabitant of Courland (usually male)	OTRO: avocado tree
+cuscatense	DEM: native or inhabitant of Cuscatancingo	OTRO: of Cuscatancingo (town of El Salvador)
+damasceno	DEM: Damascene	OTRO: Damascene
+danes	DEM: Dane (native or inhabitant of Denmark) (usually male) | Danish (language)	OTRO: Danish (from or native to Denmark) | Danish (pertaining to Denmark)
+darwiniano	DEM: Darwinian (of, from or relating to the city of Darwin, capital of Nort | Darwinian (native or inhabitant of the city of Darwin, capital of Nort	OTRO: Darwinian | Darwinian
+delawareño	DEM: Delawarean	OTRO: Delawarean
+delgadense	DEM: native or inhabitant of Delgado	OTRO: of Delgado (city of El Salvador)
+dinamarques	DEM: Danish	OTRO: Dane
+dominiques	DEM: Dominican (native or inhabitant of Dominica) (usually male)	OTRO: Dominican (of Dominica)
+egipcio	DEM: Egyptian (language)	OTRO: Egyptian | Egyptian (person)
+elamita	DEM: Elamite (of, from or relating to Elam) | Elamite (native or inhabitant of Elam)	OTRO: Elamite (relating to the Elamite language) | Elamite (language)
+escoces	DEM: Scots (language)	OTRO: Scottish (from or native to Scotland) | Scottish (pertaining to Scotland)
+esguizaro	DEM: Swiss (native or inhabitant of Switzerland) (usually male)	OTRO: Swiss (of, from or relating to Switzerland)
+eslovaco	DEM: Slovak (language)	OTRO: Slovak (from or native to Slovakia) | Slovak (pertaining to Slovakia)
+esloveno	DEM: Slovene (language)	OTRO: Slovene, Slovenian (from or native to Slovenia) | Slovene, Slovenian (pertaining to Slovenia)
+español	DEM: Spanish (language)	OTRO: Spanish (from or native to Spain) | Spanish (pertaining to Spain or to the language)
+estacionero	DEM: native or inhabitant of La Estación de Guadix, Spain (usually male) | of, from or relating to La Estación de Guadix, Spain	OTRO: bookseller | a religious singer during Holy Week
+estambuli	DEM: of, from or relating to the city of Istanbul, Turkey | Istanbulite (native or inhabitant of the city of Istanbul, Turkey)	OTRO: 
+estoniano	DEM: synonym of estonio	OTRO: synonym of estonio
+estonio	DEM: Estonian (language)	OTRO: Estonian (pertaining to Estonia) | Estonian (from or native to Estonia)
+etrusco	DEM: Etruscan (relative or belonging to Etruria or the Etruscans)	OTRO: Etruscan (person from Etruria) | Etruscan (language)
+europeo	DEM: European	OTRO: European
+extremeño	DEM: Extremaduran (language)	OTRO: Extremaduran | Extremaduran (person)
+fernandino	DEM: of, from or relating to the city of Fernando de la Mora, Central depar | native or inhabitant of the city of Fernando de la Mora, Central depar	OTRO: of Fernando, of Ferdinand; Ferdinand's (of or relating to anyone famou | of Ferdinand II of Aragon; Ferdinand's
+feroes	DEM: Faroese (language)	OTRO: Faroese | Faroese (person)
+filipino	DEM: male Philippine-born person of pure or majority Spanish descent	OTRO: Filipino (of or pertaining to the Philippines or its people, language, | Filipino (a citizen or local inhabitant of the Philippines and those d
+finlandes	DEM: Finnish (language)	OTRO: Finnish (from or native to Finland) | Finnish (pertaining to Finland)
+flamenco	DEM: Flemish | Fleming, a Flemish person	OTRO: flamenco | insolent, cheeky
+floridano	DEM: of, from or relating to the state of Florida, United States	OTRO: Floridian descended from the original Spanish settlers of Florida | Floridian
+frances	DEM: French (language)	OTRO: French (as in French food, clothing, etc.) | Frenchman, inhabitant of France
+francoguayanes	DEM: French Guianese	OTRO: French Guianese (man or person of unspecified gender)
+frison	DEM: West Frisian | West Frisian	OTRO: Friesian horse
+friulano	DEM: Friulian (language)	OTRO: Friulian | Friulian person
+galenso	DEM: someone with blond or red hair	OTRO: a Welsh person from Y Wladfa in Chubut province
+gales	DEM: Welsh (language)	OTRO: Welsh (from or native to Wales) | Welsh (pertaining to Wales)
+gallego	DEM: Galician (language)	OTRO: Galician | Galician
+galo	DEM: French | Gaulish (Celtic language)	OTRO: Gallic | Gallo (language)
+gantes	DEM: Someone from Ghent	OTRO: Of or from Ghent
+gato	DEM: cat (unspecified gender) | tomcat, gib (male cat)	OTRO: jack (mechanical device) | Madrilenian (a person from Madrid)
+gaucho	DEM: of, from or relating to the state of Rio Grande do Sul, Brazil | native or inhabitant of the state of Rio Grande do Sul, Brazil (usuall	OTRO: possessing traditional, especially Argentine, cowboy virtues; noble, v | helpful
+genoves	DEM: Genoese	OTRO: Genoese (person) | Genoese (dialect)
+georgiano	DEM: Georgian (language)	OTRO: Georgian (all senses) | Georgian (all senses)
+geta	DEM: Geat	OTRO: geta
+ghanes	DEM: of Ghana; Ghanaian (of, from, or relating to Ghana or the Ghanaian peo	OTRO: Ghanaian (person)
+ginebrino	DEM: Genevan (native or inhabitant of the city of Geneva, Switzerland) (usu	OTRO: Genevan
+godo	DEM: Gothic	OTRO: Goth | Spaniard, loyalist
+gotemburgues	DEM: of, from or relating to the city of Gothenburg, Sweden	OTRO: a Gothenburger (a resident of native of Gothenburg, Sweden)
+granadino	DEM: of, from or relating to Granada | native or inhabitant of Granada (usually male)	OTRO: Grenadian | Grenadinese
+griego	DEM: Greek (language) | an unintelligible language	OTRO: Greek (from or native to Greece) | Greek (pertaining to Greece)
+gringo	DEM: an American (anyone from the United States, sometimes including Puerto	OTRO: a light-skinned foreigner | someone from the Anglosphere
+groenlandes	DEM: Greenlandic (language)	OTRO: Greenlandic | Greenlander
+guajiro	DEM: of, from or relating to La Guajira | native or inhabitant of La Guajira (usually male)	OTRO: rural | Wayuu
+guanche	DEM: Guanche (ancient inhabitant of the Canary Islands)	OTRO: Guanche (language)
+guatemalteco	DEM: Kaqchikel (language)	OTRO: Guatemalan (pertaining to the nation of Guatemala) | Guatemalan (pertaining to Guatemala City)
+guayanes	DEM: a native or resident of the Guianas	OTRO: of or relating to the Guianas
+habanero	DEM: a variety of hot chilli pepper	OTRO: native or related to Havana | an inhabitant or native of Havana
+hamburgues	DEM: Hamburger (of, from or relating to Hamburg)	OTRO: Hamburger, a person from Hamburg
+hamburguesa	DEM: female equivalent of hamburgués; female native or inhabitant of the ci	OTRO: hamburger
+hamiltoniano	DEM: Hamiltonian (of, from or relating to the city of Hamilton, Ontario, Ca | Hamiltonian (native or inhabitant of the city of Hamilton, Ontario, Ca	OTRO: Hamiltonian
+hawaiano	DEM: Hawaiian (language)	OTRO: Hawaiian | Hawaiian
+heracleota	DEM: Heraclean	OTRO: Heraclean
+hernico	DEM: Hernici, Hernician	OTRO: Hernici, Hernician (member of the Hernici Italic tribe)
+herrereño	DEM: of, from or relating to Herrera (municipality in Seville, Spain); Herr	OTRO: native or inhabitant of any location containing the name "Herrera" (us
+hindu	DEM: Indian (native or inhabitant of India)	OTRO: Hindu, Hindustani | Indian (of or relating to India or its people)
+hitita	DEM: Hittite	OTRO: Hittite | Hittite (language)
+holandes	DEM: a Hollander	OTRO: of Holland, a region in the Netherlands | of the Netherlands; Dutch
+hungaro	DEM: Rom, Gypsy (confused with cíngaro)	OTRO: Hungarian (from or native to Hungary) | Hungarian (pertaining to Hungary)
+iberico	DEM: Iberian (of, from or relating to Iberia)	OTRO: Iberian (native of Iberia)
+idumeo	DEM: Idumean	OTRO: Idumean
+ilirio	DEM: Illyrian (native or inhabitant of Illyria) (usually male)	OTRO: Illyrian
+indianes	DEM: Indianian	OTRO: a native of the East Indies | Indianian, Indianan, Hoosier (informal)
+indiano	DEM: West Indian (of, from or relating to the West Indies in the Caribbean) | East Indian (of, from or relating to the East Indies, a historical ter	OTRO: Having returned to Europe from the Americas very wealthy | West Indian
+indio	DEM: a Native American	OTRO: Indian (from India) | Indian, Native American
+indochino	DEM: native or inhabitant of Indochina (usually male)	OTRO: Indochinese
+ingles	DEM: English (language)	OTRO: English | English person
+inuit	DEM: Inuktitut (language)	OTRO: Inuit | Inuit
+iraqui	DEM: Iraqi | Iraqi	OTRO: Iraqi | Iraqi
+irlandes	DEM: Irish (language)	OTRO: Irish (from or native to Ireland) | Irish (pertaining to Ireland)
+islandes	DEM: Icelandic (from or native to Iceland) | Icelandic (pertaining to Iceland)	OTRO: Icelander
+istmeño	DEM: Panamanian (of, from or relating to Panama) | Panamanian (native or inhabitant of Panama) (usually male)	OTRO: of or from an isthmus | someone from an isthmus
+istrorrumano	DEM: Istro-Romanian (language)	OTRO: Istro-Romanian | Istro-Romanian (person)
+italiano	DEM: Italian (language)	OTRO: Italian (from or native to Italy) | Italian (pertaining to Italy)
+jacetano	DEM: of, from or relating to Jaca | native or inhabitant of Jaca	OTRO: Iacetanian | Iacetanian
+jalapeño	DEM: of, from or relating to Xalapa, Veracruz	OTRO: an inhabitant or resident of Xalapa | jalapeño (pepper)
+japones	DEM: Japanese (language)	OTRO: of Japan; Japanese | a Japanese person
+jarrero	DEM: of, from or relating to Haro, La Rioja | native or inhabitant of Haro, La Rioja (usually male)	OTRO: of jugmaking | jugmaker
+jiennense	DEM: native or inhabitant of the city of Jaén, Andalusia, Spain	OTRO: from Jaén
+kanseño	DEM: Kansan	OTRO: Kansan
+kazajo	DEM: Kazakh (language)	OTRO: Kazakh | Kazakh (person in the Kazakh ethnic group)
+kelper	DEM: synonym of malvinense (“Falkland Islander”) | a low-ranking employee	OTRO: a marginalized or poorly treated person
+kirguiso	DEM: Kyrgyzstani (native or inhabitant of Kyrgyzstan) (usually male)	OTRO: of Kyrgyzstan; Kyrgyzstani (of or relating to Kyrgyzstan) | Kyrgyz
+kurdo	DEM: Kurdish (language)	OTRO: Kurdish | Kurd
+lagunero	DEM: of, from or relating to San Cristóbal de La Laguna or the Laguna regio | native or inhabitant of San Cristóbal de La Laguna or the Laguna regio	OTRO: lake-dwelling
+lenguadociano	DEM: Languedocian (of, from or relating to Languedoc) | Languedocian (native or inhabitant of Languedoc) (usually male)	OTRO: Languedocian (the dialect of the Occitan language spoken in Languedoc-
+leones	DEM: Leonese (language)	OTRO: Leonese | Leonese person
+lepero	DEM: of, from or relating to Lepe (town in Huelva, Spain) | native or inhabitant of Lepe (town in Huelva, Spain) (usually male)	OTRO: astute, shrewd | destitute, pauper
+lesbiano	DEM: Lesbian (of, from or relating to island of Lesbos, North Aegean Region | Lesbian (native or inhabitant of island of Lesbos, North Aegean Region	OTRO: lesbian (of or relating to female homosexuality)
+lesbio	DEM: Lesbian (of, from or relating to Lesbos (island of Greece)) | Lesbian (native or inhabitant of Lesbos (island of Greece)) (usually m	OTRO: lesbian, lesbic (of or relating to lesbians and lesbianism)
+leton	DEM: Latvian (language)	OTRO: Latvian (pertaining to Latvia) | Latvian (from or native to Latvia)
+lezgiano	DEM: Lezgian (language)	OTRO: Lezgian | Lezgian (person)
+liberteño	DEM: of, from or relating to the department of La Libertad, Peru or the sma | native or inhabitant of the department of La Libertad, Peru or the sma	OTRO: of or supporting Club Libertad (a soccer club from Asunción, Paraguay) | a player, coach, fan or someone otherwise connected to Club Libertad (
+ligur	DEM: Ligurian (of, from or relating to the region of Liguria, Italy) | Ligurian (native or inhabitant of the region of Liguria, Italy)	OTRO: Ligurian (language)
+limburgues	DEM: Limburgish (language)	OTRO: Limburgish | Limburgian
+lincesta	DEM: native or inhabitant of Lynkestis	OTRO: Of or from Lynkestis
+lituano	DEM: Lithuanian (language)	OTRO: Lithuanian (from or native to Lithuania) | Lithuanian (pertaining to Lithuania)
+livonio	DEM: Livonian (language)	OTRO: Livonian | Livonian, Liv (person)
+loino	DEM: of, from or relating to the province of El Loa, Chile | native or inhabitant of the province of El Loa, Chile	OTRO: of C.D. Cobreloa (a football club from Calama, Chile) | someone connected C.D. Cobreloa (a football club from Calama, Chile), 
+longobardo	DEM: Lombard (of, from or relating to Lombardy) | Lombard (native or inhabitant of Lombardy)	OTRO: Lombard, Langobard | Lombard, Langobard (a member of a Germanic people who invaded Italy in
+luandes	DEM: Luandan	OTRO: Luandan
+luxemburgues	DEM: native or inhabitant of Luxembourg (usually male)	OTRO: Luxembourgish (from or native to Luxembourg) | Luxembourgish (pertaining to Luxembourg)
+macabeo	DEM: of, from or relating to the city of Macas, capital of the province of  | native or inhabitant of the city of Macas, capital of the province of 	OTRO: henpecked, whipped | one who is henpecked or whipped
+macedonio	DEM: Macedonian	OTRO: Macedonian
+magiar	DEM: Hungarian (of, from or relating to Hungary) | Hungarian (native or inhabitant of Hungary)	OTRO: Hungarian (of, in or relating to the Hungarian language) | Hungarian (Uralic language spoken in Hungary)
+mahones	DEM: native or inhabitant of Mahón (usually male)	OTRO: jeans (trousers) | of, or relating to Mahón
+malayo	DEM: Malay (of, from or relating to Malaysia)	OTRO: Malay (person) | Malay (language)
+malgache	DEM: Malagasy (language)	OTRO: Malagasy | Malagasy
+maltes	DEM: Maltese (from or native to Malta) | Maltese (pertaining to Malta)	OTRO: a Maltese person
+malvino	DEM: of the Falkland Islands	OTRO: Falkland Islander
+manchego	DEM: of, from or relating to La Mancha | native or inhabitant of La Mancha (usually male)	OTRO: Manchego (a type of cheese)
+manchu	DEM: Manchu (language)	OTRO: Manchu | Manchu
+marbellero	DEM: of, from or relating to Marbella	OTRO: someone from, or connected with, Marbella
+marbelli	DEM: of, from or relating to Marbella	OTRO: someone from, or connected with, Marbella
+marilandes	DEM: Marylander	OTRO: Maryland, Marylander
+marshales	DEM: Marshallese (language)	OTRO: Marshallese | Marshallese (person)
+mayamero	DEM: of or from Miami	OTRO: the wrong word to describe Someone from Miami
+maño	DEM: of, from or relating to Aragón | native or inhabitant of Aragón (usually male)	OTRO: big, large
+mediterraneo	DEM: inland, mediterraneous	OTRO: Mediterranean (of or pertaining to the Mediterranean Sea and its surro
+micenico	DEM: Mycenaean (native or inhabitant of Mycenae) (usually male)	OTRO: Mycenaean | Mycenaean Greek (Ancient Greek language spoken by the Mycenaeans in th
+minesotano	DEM: Minnesotan	OTRO: Minnesotan
+mirandes	DEM: Of, from or relating to Miranda de Ebro, Spain | A native or inhabitant of Miranda de Ebro, Spain	OTRO: Mirandese | Mirandese (person)
+misionero	DEM: of, from or relating to Misiones | native or inhabitant of Misiones (usually male)	OTRO: missionary
+mixe	DEM: Mixe (macrolanguage)	OTRO: Mixe | Mixe (people)
+monegasco	DEM: Monégasque, Monacan (pertaining to Monaco) | Monégasque, Monacan	OTRO: Monégasque, Monacan (from or native to Monaco)
+mongol	DEM: Mongolian (language)	OTRO: Mongolian (of or relating to Mongolia or its peoples, languages, or cu | Mongol, Mongolian (person)
+mongolo	DEM: Mongolian | Mongolian, Mongol	OTRO: person with Down’s syndrome | idiot
+monimboseño	DEM: native or inhabitant of Monimbó (usually male)	OTRO: of or from Monimbó
+montañes	DEM: the Astur-Leonese dialect spoken in western parts of Cantabria	OTRO: mountain, highland | from La Montaña historic region, roughly comprising Cantabria
+montenegrino	DEM: Montenegrin	OTRO: Montenegrin (person)
+moscovita	DEM: Muscovite | Muscovite	OTRO: a type of chocolate biscuit
+mostolense	DEM: of, from or relating to Móstoles	OTRO: someone of or from Móstoles
+mostolero	DEM: of, from or relating to Móstoles	OTRO: someone of or from Móstoles
+mostoleño	DEM: of, from or relating to Móstoles	OTRO: someone of or from Móstoles
+motaguense	DEM: of, from or relating to the Motagua River region | native or inhabitant of the Motagua River region	OTRO: of the Club Deportivo Motagua | someone connected to the Club Deportivo Motagua, as a player, fan, coa
+murciano	DEM: Murcian (native or inhabitant of Murcia) (usually male)	OTRO: Murcian (of or relating to the city of Murcia) | Murcian dialect of Spanish
+nantes	DEM: Someone from Nantes	OTRO: Of or from Nantes
+navideño	DEM: Christmas Islander (native or inhabitant of Christmas Island) (usually	OTRO: related to Christmas
+nazareno	DEM: of, from or relating to the city of Dos Hermanas, Seville, Andalusia,  | native or inhabitant of the city of Dos Hermanas, Seville, Andalusia, 	OTRO: Nazarene | Nazarene
+neerlandes	DEM: the Dutch (Netherlandish) language (including Flemish)	OTRO: of the Netherlands; Dutch | a Dutchman
+neodelhiense	DEM: New Delhian, Dilliwale, Delhite (native or resident of New Delhi, Indi	OTRO: New Delhian, Dilliwale, Delhite (of or relating to New Delhi, India)
+neoyorquino	DEM: of, from or relating to New York City, New York state, United States	OTRO: a New Yorker; somebody from New York
+nepales	DEM: Nepali (language)	OTRO: Nepali | Nepali
+nepali	DEM: Nepali (native or inhabitant of Nepal) (usually male)	OTRO: Nepali | Nepali (language)
+nicoyano	DEM: of, from or relating to Nicoya (town and canton of Costa Rica) | native or inhabitant of Nicoya (town and canton of Costa Rica) (usuall	OTRO: of the Nicoya (a pre-Columbine culture) | a member of the Nicoya
+nizardo	DEM: native or inhabitant of the city of Nice, the prefecture of the Alpes-	OTRO: Niçois
+noruego	DEM: Norwegian (language)	OTRO: Norwegian (from or native to Norway) | Norwegian (pertaining to Norway or the Norwegian language)
+numantino	DEM: Numantian (of, from or relating to Numantia) | Numantian (native or inhabitant of Numantia) (usually male)	OTRO: heroic
+occitano	DEM: of, from or relating to the medieval region of Occitania in southern F | of, from or relating to the modern-day administrative region of Occita	OTRO: of Occitan (language spoken in southern France); Occitanic | Occitan (a Romance language)
+okinawense	DEM: Okinawan (language)	OTRO: Okinawan | Okinawan
+orinoquense	DEM: Orinocan (of, from or relating to Orinoco)	OTRO: Orinocan; someone from Orinoco
+osetio	DEM: Ossetian (language)	OTRO: Ossetian | Ossetian
+paisa	DEM: Colombian	OTRO: person from a rural or rustic area | Chinese immigrant
+palestino	DEM: someone from eastern Cuba, especially a poor, dark-skinned one who mov	OTRO: Palestinian | Palestinian
+palmero	DEM: of, from or relating to La Palma | native or inhabitant of La Palma (usually male)	OTRO: someone who claps rhythmically in flamenco performances | an unconditional/dyed-in-the-wool/diehard fan/supporter; toadeater, sy
+pampero	DEM: of, from or relating to the pampas | native or inhabitant of the pampas (usually male)	OTRO: pampero (wind) | shearwater
+pampino	DEM: native or inhabitant of Pampas, Peru (usually male)	OTRO: of or from Pampas, Peru
+panchito	DEM: a Hispanic person from the Americas; a spic/spick, a greaser/greasebal	OTRO: fried peanut seed, usually with salt
+pangasinense	DEM: Pangasinan (of, from or relating to the province of Pangasinan, Philip | Pangasinan (native or inhabitant of the province of Pangasinan, Philip	OTRO: Pangasinan (language)
+papu	DEM: Papua New Guinean | Papua New Guinean	OTRO: guy, dude, bro
+papuano	DEM: Papua New Guinean (native or inhabitant of Papua New Guinea) (usually 	OTRO: Papua New Guinean (of or relating to Papua New Guinea)
+paraguayo	DEM: Paraguayan	OTRO: Paraguayan (from or native to Paraguay) | Paraguayan (pertaining to Paraguay)
+parto	DEM: first-person singular present indicative of partir	OTRO: childbirth, labor | offspring
+pascuense	DEM: Pascuense (language)	OTRO: Pascuense | Pascuense
+pastun	DEM: Pashto (language)	OTRO: Pashtun (relating to the Pashtun people or their language Pashto) | Pashtun (person)
+patagon	DEM: Band-tailed earthcreeper (Ochetorhynchus phoenicurus)	OTRO: Patagonian | Patagonian
+patepluma	DEM: native or inhabitant of the city of Santa Bárbara or surrounding Santa	OTRO: of or from Santa Bárbara Department, Honduras
+pekines	DEM: Beijinger (native or inhabitant of the city of Beijing, capital of Chi	OTRO: Pekingese | Pekingese (small dog)
+persa	DEM: Persian (native or inhabitant of Persia)	OTRO: Persian (of, from, or pertaining to Persia) | Persian (language)
+pertita	DEM: Perthian (of, from or relating to the city of Perth, Western Australia	OTRO: perthite | Perthian, Perthite (resident or native of Perth, Australia)
+peñarolense	DEM: of Club Atlético Peñarol (a football team from Uruguay)	OTRO: someone associated with Club Atlético Peñarol, a Uruguayan football te
+piamontes	DEM: Piedmontese (language)	OTRO: Piedmontese | Piedmontese (person)
+pipope	DEM: a native or inhabitant of Puebla, perceived to be stupid	OTRO: Related to people described as pipope
+pisquero	DEM: of, from or relating to Pisco | native or inhabitant of Pisco (usually male)	OTRO: pisco
+poblano	DEM: of, from or relating to the state of Puebla, Mexico | native or inhabitant of the state of Puebla, Mexico (usually male)	OTRO: poblano (chile pepper)
+polaco	DEM: Pole (native or inhabitant of Poland) (usually male) | Catalan (person from Catalonia)	OTRO: Polish (from or native to Poland) | Polish (pertaining to Poland)
+porteño	DEM: native to or inhabiting the port town of El Puerto de Santa María | native to or inhabiting the port town of Buenos Aires	OTRO: native to or inhabiting a port town | native to or inhabiting Valparaíso
+portuense	DEM: of, from or relating to El Puerto de Santa María (municipality in Anda | of, from or relating to the city of Porto, Porto District, Portugal	OTRO: port city
+portugues	DEM: Portuguese (language)	OTRO: Portuguese (from, native to, or pertaining to Portugal) | Portuguese (person)
+prusiano	DEM: Prussian (native or inhabitant of Prussia) (usually male)	OTRO: Prussian
+quebequense	DEM: synonym of quebequés	OTRO: synonym of quebequés
+renano	DEM: of, from or relating to the Rhineland | Rhinelander (native or inhabitant of the Rhineland) (usually male)	OTRO: Rhenish (pertaining to the river Rhine) | Rhenish (Germanic dialects spoken in the Rhineland)
+rodio	DEM: Rhodian (of, from or relating to the island of Rhodes, South Aegean Re | Rhodian (native or inhabitant of the island of Rhodes, South Aegean Re	OTRO: rhodium
+rolo	DEM: first-person singular present indicative of rolar	OTRO: blind (covering for a window) | curler, hair roller
+romano	DEM: Roman (of, from or relating to the city of Rome, capital of Italy) | Roman (of, from or relating to Rome (ancient empire covering much of t	OTRO: of Rome as the seat of power of the popes, heads of the Roman Catholic
+romblomano	DEM: of, from or relating to Romblon | native or inhabitant of Romblon (usually male)	OTRO: Romblomanon (language)
+rosellones	DEM: of, from or relating to Roussillon | native or inhabitant of Roussillon (usually male)	OTRO: Northern Catalan
+rumano	DEM: Romanian (language)	OTRO: Romanian (from or native to Romania) | Romanian (pertaining to Romania)
+ruso	DEM: an Ashkenazic Jew	OTRO: Russian | Russian (person) (male or of unspecified sex)
+sabanero	DEM: of, from or relating to the savannah | native or inhabitant of the savannah (usually male)	OTRO: any of a number of birds (see derived terms below)
+saharaui	DEM: Sahrawi (native or inhabitant of the partly-recognized country of West	OTRO: Saharan | Sahrawi
+salacenco	DEM: native or inhabitant of Salazar (usually male)	OTRO: Salazarese | Salazarese
+salamanquino	DEM: of, from or relating to the city of Salamanca or surrounding province,	OTRO: a native of Salamanca
+salentino	DEM: native or inhabitant of Salento (usually male) | of, from or relating to Salento	OTRO: Salento dialect
+salmantino	DEM: of, from or relating to the city of Salamanca or surrounding province,	OTRO: a native of Salamanca
+salomonense	DEM: Solomon Islander	OTRO: of the Solomon Islands
+salvadoreño	DEM: Salvadoran	OTRO: Salvadoran
+samario	DEM: of, from or relating to Santa Marta, Colombia | native or inhabitant of Santa Marta, Colombia (usually male)	OTRO: samarium
+samoano	DEM: Samoan (language)	OTRO: Samoan | Samoan (person)
+samogitio	DEM: Samogitian (language)	OTRO: Samogitian | Samogitian
+sanjuanero	DEM: Sanjuanero (of, from or relating to the city of San Juan, capital of P | Sanjuanero (native or inhabitant of the city of San Juan, capital of P	OTRO: common cockchafer
+saraguro	DEM: of, from or relating to Saraguro (canton of Ecuador) | native or inhabitant of Saraguro (canton of Ecuador) (usually male)	OTRO: of the Saraguro group of people | Saraguro (member of the Saraguro people)
+sardo	DEM: Sardinian (of, from or relating to Sardinia, Italy) | Sardinian (native or inhabitant of Sardinia, Italy) (usually male)	OTRO: Sardinian (language) | sard
+saucero	DEM: of, from or relating to San Andrés y Sauces | native or inhabitant of San Andrés y Sauces (usually male)	OTRO: willow
+selyucida	DEM: Seljuk (of or related to Seljuk, his dynasty, their empire, or their p	OTRO: Seljuk (a member of the Seljuk dynasty, a person of their empire)
+serbio	DEM: Serbian (language variety of Serbo-Croatian)	OTRO: Serbian | Serbian, Serb (person)
+serrano	DEM: of, from or relating to the department of Lavalleja, Uruguay | native or inhabitant of the department of Lavalleja, Uruguay (usually 	OTRO: mountain, mountainous | sea bass
+siames	DEM: Siamese (native or inhabitant of Siam) (usually male)	OTRO: Siamese (from Siam) | Siamese cat
+siciliano	DEM: Sicilian (language)	OTRO: Sicilian | Sicilian (people)
+sidneyes	DEM: Sydneyite (of, from or relating to the city of Sydney, New South Wales	OTRO: Sydneysider, Sydneyite (native or resident of Sydney, New South Wales,
+silesio	DEM: Silesian (native or inhabitant of Silesia) (usually male)	OTRO: Silesian | Silesian (language)
+sirio	DEM: Syrian (A person from Syria or of Syrian descent)	OTRO: Syrian
+somali	DEM: Somali (language)	OTRO: Somali | Somali
+suabo	DEM: Swabian (of, from or relating to Swabia)	OTRO: Swabian (High German dialect)
+sudsudanes	DEM: South Sudanese (native or inhabitant of South Sudan) (usually male)	OTRO: South Sudanese (of or relating to South Sudan)
+sueco	DEM: Swedish (language)	OTRO: Swedish (from or native to Sweden) | Swedish (pertaining to Sweden)
+suizo	DEM: Swiss | native or inhabitant of Switzerland (usually male)	OTRO: a type of bun covered in sugar
+sumerio	DEM: Sumerian (language)	OTRO: Sumerian | Sumerian (person)
+tahitiano	DEM: Tahitian (language)	OTRO: Tahitian | Tahitian
+taipeiano	DEM: Taipeiese (of, from or relating to Taipei)	OTRO: Taipeian, Taipeiese, someone from Taipei
+taiwanes	DEM: Taiwanese (native or inhabitant of Taiwan) (usually male)	OTRO: Taiwanese
+tampeño	DEM: native or inhabitant of Tampa, Florida (usually male)	OTRO: Relating to Tampa, Florida, or its inhabitants
+tartaro	DEM: Tatar (language)	OTRO: hell | tartaric acid
+tasmano	DEM: Tasmania	OTRO: Tasmanian
+tayiko	DEM: Tajikistani (native or inhabitant of Tajikistan) (usually male)	OTRO: Tajik, Tajikistani (of or relating to the nation of Tajikistan) | Tajik (of or relating to the Tajik ethnic group or the Tajik language)
+tibetano	DEM: Tibetan (language)	OTRO: Tibetan | Tibetan (person)
+tirio	DEM: Tyrian	OTRO: Tyrian
+toledano	DEM: Toledan (of, from or relating to the city of Toledo, Castilla-La Manch	OTRO: a Toledan (someone from Toledo)
+tonga	DEM: Tongan (native or inhabitant of Tonga)	OTRO: coating (thin outer layer) | task, job
+tortuguero	DEM: native or inhabitant of Tortugas, Santa Fe, Argentina (usually male)	OTRO: turtle
+toscano	DEM: Tuscan (of, from or relating to the region of Tuscany, Italy) | Tuscan (native or inhabitant of the region of Tuscany, Italy) (usually	OTRO: Tuscan (the dialect of Italian spoken in Tuscany)
+totonaco	DEM: Totonac (language)	OTRO: Totonac | Totonac person
+troyano	DEM: Trojan (native or inhabitant of Troy) (usually male)	OTRO: Trojan | Trojan (computer virus)
+tuneci	DEM: Tunisian (person from Tunisia or of Tunisian descent)	OTRO: of Tunisia; Tunisian (of or describing the country of Tunisia) | of Tunis (of or describing the city of Tunis)
+tunecino	DEM: of, from or relating to Tunis | native or inhabitant of Tunis (usually male)	OTRO: Tunisian | Tunisian
+turco	DEM: Turkish (the official language of Turkey, the Republic of Cyprus (alon	OTRO: Turk (person) | Arab or Jew
+turcomano	DEM: Turkmen, Turkmenistani (of, from or relating to Turkmenistan) | Turkmen, Turkmenistani (native or inhabitant of Turkmenistan) (usually	OTRO: Turkoman, Turkmen | Turkoman, Turkmen (member of the ethnic group)
+ucraniano	DEM: Ukrainian (language)	OTRO: Ukrainian | Ukrainian person
+uzbeko	DEM: Uzbek (language)	OTRO: Uzbek | Uzbek (person)
+valdiviano	DEM: of, from or relating to Valdivia (city and commune in southern Chile) | native or inhabitant of Valdivia (city and commune in southern Chile) 	OTRO: a soup made with jerky and onions
+valenciano	DEM: Valencian (dialect of Catalan)	OTRO: Valencian | Valencian
+valon	DEM: Walloon (language)	OTRO: Walloon | a Walloon person
+vancuverita	DEM: Vancouverite (of, from or relating to the city of Vancouver, British C	OTRO: Vancouverite (of or relating to Vancouver, British Columbia, Canada)
+vandalo	DEM: Vandalic (language)	OTRO: vandal | hooligan; lout; thug; yob, yobbo; punk
+vasco	DEM: Basque (language)	OTRO: Basque | a Basque person
+vasconavarro	DEM: of or connecting the Basque Country and Navarre	OTRO: someone from the Basque Country and Navarre, or someone who claims to 
+vaticano	DEM: a Vaticanian (someone from the Vatican city state)	OTRO: Vatican (pertaining to the Vatican) | Vatican (pertaining to the Pope or the Holy See)
+victoriano	DEM: Victorian (of, from or relating to the city of Victoria, capital of Br | Victorian (native or inhabitant of the city of Victoria, capital of Br	OTRO: Victorian (relating to Queen Victoria's reign)
+vietnamita	DEM: Vietnamese (language)	OTRO: Vietnamese | Vietnamese (person)
+villareño	DEM: of, from or relating to Cabezas del Villar or Villar del Ala | native or inhabitant of Cabezas del Villar or Villar del Ala (usually 	OTRO: of or from a villa | someone from a villa
+vizcaino	DEM: Biscayne (pertaining to Biscay or to the language)	OTRO: Biscayan (from or native to Biscay) | Biscayan
+yugoslavo	DEM: Yugoslav	OTRO: Yugoslavian

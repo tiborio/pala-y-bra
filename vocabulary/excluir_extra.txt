@@ -15,3 +15,5 @@ madrileño barcelones sevillano andaluz catalan gallego vasco valenciano murcian
 yucateco jalisciense tapatio regiomontano neoleones veracruzano oaxaqueño chiapaneco tabasqueño sonorense sinaloense michoacano guanajuatense queretano hidalguense coahuilense tamaulipeco guerrerense morelense tlaxcalteca nayarita durangueño zacatecano potosino bajacaliforniano chilango tijuanense
 # Latin America: cities and regions
 bogotano limeño quiteño caraqueño porteño paceño santiaguino asunceno montevideano sanjuanino cordobes mendocino rosarino guayaquileño cuencano medellinense antioqueño caleño cartagenero barranquillero maracucho valenciano arequipeño cusqueño sanjosino habanero santiaguero
+# Round 2: more demonyms and ethnonyms
+texano tejano californiano floridano neoyorquino bostoniano parisino moscovita tico catracho pinolero cachaco bavaro sajon normando borgoñon lombardo veneciano genoves milanes celta visigodo ostrogodo suevo bereber tuareg azteca inca mapuche nahuatl tarahumara gringo

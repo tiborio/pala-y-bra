@@ -27,7 +27,7 @@ def _loadw(f):
         for l in open(f,encoding='utf-8'):
             if not l.startswith('#'): out|=set(l.split())
     return out
-EXC=_load('excluir.txt')                             # proper nouns, demonyms, language names (from extraer.js)
+EXC=_load('excluir.txt')|_load('excluir_cat.txt')|_load('mixtas_cat.txt')   # demonyms etc. (mixtas banned unless in permitir.txt)
 def _forms(p):                                       # an allowed word also allows its plural / feminine forms
     s={p,p+'s',p+'es'}
     if p[-1] in 'oa': s|={p[:-1]+x for x in ('a','o','as','os')}
