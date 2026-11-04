@@ -14,4 +14,10 @@ https://creativecommons.org/licenses/by-sa/4.0/
   nombres propios y gentilicios y para enlazar formas verbales con su palabra base:
   https://kaikki.org
 
-Pendiente de confirmar: la licencia exacta de `an-array-of-spanish-words` (el paquete no la muestra en su página de npm).
+## Licencias de cada fuente (comprobadas el 4 de noviembre de 2026)
+- `an-array-of-spanish-words`: licencia **MIT**, © Zeke Sikelianos (según su repositorio de GitHub y su página de npm).
+- Su lista deriva de la lista de Letterpress de `lorenbrichter/Words`, que declara **CC0-1.0** (dominio público).
+  Ese repositorio no documenta de dónde salió exactamente la lista en español ("basada libremente en otras listas"),
+  así que esa parte del origen no se puede verificar. Es una lista de palabras comunes, no un texto creativo, y el riesgo es bajo.
+- FrequencyWords: contenido CC BY-SA 4.0 (por eso los datos del juego se comparten con la misma licencia).
+- Wiktionary / Wiktextract / kaikki.org: CC BY-SA 4.0.
